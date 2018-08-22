@@ -1,5 +1,7 @@
 module Rendering where
 
+import Data.Traversable (mapAccumL)
+
 import Graphics.Gloss.Data.Color
 import Graphics.Gloss.Data.Picture
 import Graphics.Gloss.Rendering
@@ -29,7 +31,7 @@ weebPictures sprites state = Pictures $ zipWith moveWeebs (weebs state) $ fmap (
                  Normal -> firstFrame $ weebAnimation weeb
                  Dead   -> firstFrame $ weebAnimation weeb
 
-    moveWeebs (Weeb position _ _ _) weebPic = (uncurry translate) position weebPic
+    moveWeebs (Weeb position _ _ _ _) weebPic = (uncurry translate) position weebPic
 
 
 sprite2Picture :: Sprite -> Picture
@@ -54,9 +56,52 @@ renderFrame window glossState (sounds,sprites) state = do
           [ weebPictures sprites state
           , (uncurry translate) torbPos torbSprite
           , translateHammer state  $ sprite2Picture $ getTorbHammer sprites state
-          , translate ($ hearts
+          , translate (fromIntegral gameWidth - (fromIntegral (lives state) + 1)*heartWidth) (fromIntegral gameHeight - heartHeight) $ showHearts sprites state
+          , translate 0 (fromIntegral gameHeight - digitHeight) $ showPoints sprites state
+          , translate (9 * digitWidth) (fromIntegral gameHeight - difficultyHeight) $ showDifficulty sprites state
           ]
     GLFW.swapBuffers window
+
+showHearts :: Sprites -> GameState -> Picture
+showHearts sprites state = Pictures $ heartList (fromIntegral (lives state))
+  where 
+    heartPic = sprite2Picture (heart sprites)
+    heartList n
+     | n == 0 = []
+     | n > 0  = (translate (heartWidth*n) 0 heartPic):(heartList (n-1))
+     | otherwise = []
+
+
+showPoints :: Sprites -> GameState -> Picture
+showPoints sprites state = number2Picture sprites (points state)
+
+showDifficulty :: Sprites -> GameState -> Picture
+showDifficulty sprites state = sprite2Picture $ difficulty2Sprite sprites (difficulty state)
+
+difficulty2Sprite :: Sprites -> Difficulty -> Sprite
+difficulty2Sprite sprites Easy    = (weakWeebs sprites)
+difficulty2Sprite sprites Medium  = (garbageGenjis sprites)
+difficulty2Sprite sprites Hard    = (shittyShimadas sprites)
+difficulty2Sprite sprites Extreme = (noodleMunchinNarutos sprites)
+
+number2Picture :: Sprites -> Int -> Picture
+number2Picture sprites num = Pictures $ snd 
+                                       $ mapAccumL (\acc x -> (acc+1,translate (acc*digitWidth) 0 x)) 0 
+                                       $ fmap (sprite2Picture . char2Sprite sprites) 
+                                       $ show num
+
+char2Sprite :: Sprites -> Char -> Sprite
+char2Sprite sprites '0' = digit0 sprites
+char2Sprite sprites '1' = digit1 sprites
+char2Sprite sprites '2' = digit2 sprites
+char2Sprite sprites '3' = digit3 sprites
+char2Sprite sprites '4' = digit4 sprites
+char2Sprite sprites '5' = digit5 sprites
+char2Sprite sprites '6' = digit6 sprites
+char2Sprite sprites '7' = digit7 sprites
+char2Sprite sprites '8' = digit8 sprites
+char2Sprite sprites '9' = digit9 sprites
+
 
 getTorbHammer :: Sprites -> GameState -> Sprite
 getTorbHammer sprites state =

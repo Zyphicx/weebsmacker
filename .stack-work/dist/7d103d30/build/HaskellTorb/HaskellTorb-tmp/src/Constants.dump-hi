@@ -1,0 +1,386 @@
+
+==================== FINAL INTERFACE ====================
+2018-08-03 18:59:34.4320861 UTC
+
+interface main:Constants 8043
+  interface hash: 0f0a3902815dc11ff90cb96b06d238d4
+  ABI hash: 916c21825e88169b843e7af4cf9b1bda
+  export-list hash: 65df7f5b0b18332b03cc258368944848
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 05a7dfc725707cda3dfdbf87b0f28b5d
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Constants.adjustX
+  Constants.adjustY
+  Constants.aliveTimer
+  Constants.attachAngleDiffLeft
+  Constants.attachAngleDiffRight
+  Constants.attachRadiusLeft
+  Constants.attachRadiusRight
+  Constants.attachXLeft
+  Constants.attachXRight
+  Constants.attachYLeft
+  Constants.attachYRight
+  Constants.backgroundColor
+  Constants.deadTimer
+  Constants.difficultyHeight
+  Constants.digitHeight
+  Constants.digitWidth
+  Constants.fps
+  Constants.g
+  Constants.gameHeight
+  Constants.gameWidth
+  Constants.hammerMaxAngle
+  Constants.heartHeight
+  Constants.heartWidth
+  Constants.hitPointAngleLeft
+  Constants.hitPointAngleRight
+  Constants.hitPointRadiusLeft
+  Constants.hitPointRadiusRight
+  Constants.initGameState
+  Constants.jumpSpeed
+  Constants.maxWeebCooldown
+  Constants.minWeebCooldown
+  Constants.moveSpeed
+  Constants.swingSpeed
+  Constants.torbHeight
+  Constants.torbHeightScale
+  Constants.torbRatio
+  Constants.torbSpriteHeight
+  Constants.torbSpriteWidth
+  Constants.torbWidth
+  Constants.weebHeight
+  Constants.weebHeightScale
+  Constants.weebRatio
+  Constants.weebSpriteHeight
+  Constants.weebSpriteWidth
+  Constants.weebWidth
+module dependencies: Types
+package dependencies: GLFW-b-3.2.1.0 GLURaw-2.0.0.4 GLUT-2.7.0.13
+                      ObjectName-1.1.0.1 OpenGL-3.0.2.1 OpenGLRaw-3.3.0.2
+                      StateVar-1.1.1.0 array-0.5.2.0 base-4.11.1.0 binary-0.8.5.1
+                      bindings-GLFW-3.2.1.1 bmp-1.2.6.3 bytestring-0.10.8.2
+                      containers-0.5.11.0 deepseq-1.4.3.0 fixed-0.2.1.1 ghc-boot-th-8.4.3
+                      ghc-prim-0.5.2.0 gloss-1.12.0.0 gloss-rendering-1.12.0.0 half-0.3
+                      integer-gmp-1.0.2.0 pretty-1.1.3.6 stm-2.4.5.0
+                      template-haskell-2.13.0.0 text-1.2.3.0
+orphans: stm-2.4.5.0:Control.Monad.STM text-1.2.3.0:Data.Text
+         binary-0.8.5.1:Data.Binary.Generic text-1.2.3.0:Data.Text.Show
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         GLFW-b-3.2.1.0:Graphics.UI.GLFW.Types base-4.11.1.0:GHC.Float
+         base-4.11.1.0:GHC.Base
+family instance modules: GLFW-b-3.2.1.0:Graphics.UI.GLFW.Types
+                         base-4.11.1.0:Control.Applicative base-4.11.1.0:Data.Complex
+                         base-4.11.1.0:Data.Functor.Compose base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         containers-0.5.11.0:Data.IntMap.Internal
+                         containers-0.5.11.0:Data.IntSet.Internal
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Sequence.Internal
+                         containers-0.5.11.0:Data.Set.Internal containers-0.5.11.0:Data.Tree
+                         ghc-boot-th-8.4.3:GHC.ForeignSrcLang.Type
+                         ghc-boot-th-8.4.3:GHC.LanguageExtensions.Type half-0.3:Numeric.Half
+                         pretty-1.1.3.6:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.6:Text.PrettyPrint.HughesPJ
+                         template-haskell-2.13.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.3.0:Data.Text
+import  -/  base-4.11.1.0:GHC.Float 99ddb84df6cc12bd84829dd8cd755ac2
+import  -/  base-4.11.1.0:GHC.Num 5de8df0185e7e8d8ec29b3c61e2c8606
+import  -/  base-4.11.1.0:GHC.Real 032ed0a1053f878238d78e95e75f2edf
+import  -/  base-4.11.1.0:Prelude aca391812f777207b15d62bb5b9feb63
+import  -/  gloss-1.12.0.0:Graphics.Gloss.Data.Color 02769df076d68aba30b7383a3a7c9fb9
+import  -/  gloss-rendering-1.12.0.0:Graphics.Gloss.Internals.Data.Color 941f3381fda854bee35e2dd769e61eb2
+import  -/  Types 86017bc6ec9258d54a2cd0a7197d3a23
+  exports: cdab6bcc0f25b78227451b5170314fa3
+  Difficulty 7014142eceb4aa55045f9bb68a5a975e
+  Easy a156c75960fecb2ae14e822ee6568842
+  Extreme 7c4ee4080d02968c9cb6c76190b6b297
+  GameState 91d7566252d08826943aab191be6d881
+  Hard 2a6a17865eb3d8742f468179779eea51
+  Left 17e26f6d5a819f27499ac1bb0cc50ed2
+  Medium e97833f130d702f00eb3eb2397cd5f17
+  Player 7e046b1e1f6d8dde005d16ca45f43edb
+  Still 5033b4c73e618e49a26d0883046f95eb
+4711114037cee717d1c600bd85222c07
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Constants.$trModule3
+                   Constants.$trModule1) -}
+5272ec1660a089db1f29810dfdb9714a
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Constants.$trModule2) -}
+926bf13d23489a78e9f262bce3f2904f
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Constants"#) -}
+975c1a64beb398b749e9e49ff4945777
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Constants.$trModule4) -}
+bbd65431fc172ba160f686fa007fa94f
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+390b6d293418279ae88f66b36d094f93
+  adjustX :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -640.0#) -}
+65f26df9315351a6fd363b808b596710
+  adjustY :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -360.0#) -}
+37f9869ace32a791dfaa467ff10eb64d
+  aliveTimer :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 10.0#) -}
+1e57844fe5df38dc9ce619a767b89c38
+  attachAngleDiffLeft :: GHC.Types.Float
+  {- Strictness: m,
+     Unfolding: (GHC.Types.F# (GHC.Prim.atanFloat# 0.37878788#)) -}
+b86f020e6c242673eedd5830dd701211
+  attachAngleDiffRight :: GHC.Types.Float
+  {- Unfolding: (case Constants.hammerMaxAngle of wild1 { GHC.Types.F# y ->
+                 GHC.Types.F#
+                   (GHC.Prim.minusFloat# (GHC.Prim.atanFloat# 6.25#) y) }) -}
+6c7af0b2570d2f10b900f1e298a8f910
+  attachRadiusLeft :: GHC.Types.Float
+  {- Strictness: m,
+     Unfolding: (GHC.Types.F#
+                   (GHC.Prim.sqrtFloat#
+                      (GHC.Prim.plusFloat#
+                         (GHC.Prim.powerFloat# 66.0# 2.0#)
+                         (GHC.Prim.powerFloat# 25.0# 2.0#)))) -}
+23e5b58885622e14578f51d49fede30d
+  attachRadiusRight :: GHC.Types.Float
+  {- Strictness: m,
+     Unfolding: (GHC.Types.F#
+                   (GHC.Prim.sqrtFloat#
+                      (GHC.Prim.plusFloat#
+                         (GHC.Prim.powerFloat# 4.0# 2.0#)
+                         (GHC.Prim.powerFloat# 25.0# 2.0#)))) -}
+c650b4c97f1b4f2718b4e3b5f53d06ac
+  attachXLeft :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 66.0#) -}
+626289ce549f3d3595f4f33e7dfeecce
+  attachXRight :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 4.0#) -}
+c82695402dae18846752bff819fb88b9
+  attachYLeft :: GHC.Types.Float
+  {- Strictness: m, Unfolding: (Constants.attachYRight) -}
+5cacc1aacc98cd9b8ce8e668e0b62441
+  attachYRight :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 25.0#) -}
+10997e5759e00738c06d7462da4f4391
+  backgroundColor :: Graphics.Gloss.Internals.Data.Color.Color
+  {- Unfolding: (case Graphics.Gloss.Internals.Data.Color.$wclampColor
+                        204.0#
+                        255.0#
+                        255.0#
+                        255.0# of ww5 { (#,,,#) ww6 ww7 ww8 ww9 ->
+                 Graphics.Gloss.Internals.Data.Color.RGBA ww6 ww7 ww8 ww9 }) -}
+c8380f3fe82b85bd2667d0022f9f307b
+  deadTimer :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 1.0#) -}
+ab06a36b087cf8adae7e9664f3b4b31c
+  difficultyHeight :: GHC.Types.Float
+  {- Strictness: m, Unfolding: (Constants.digitHeight) -}
+d9ce2918c8dd54e794170b71d16cff1c
+  digitHeight :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 40.0#) -}
+7e923cfd6d0e815aa5ccae2c22bb3800
+  digitWidth :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 30.0#) -}
+8f2bb909692c254e0f26f55d79144af5
+  fps :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 60#) -}
+49d8bfd986982513c7f0cceb2d642d6e
+  g :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# -1440.0#) -}
+0a0aef2e876feca61928f7c7b58e6c7a
+  gameHeight :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 720#) -}
+84f9e13caf1361ab16282de7acb40794
+  gameWidth :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 1280#) -}
+08621ff3c6bcf13e1d8293d0954ef330
+  hammerMaxAngle :: GHC.Types.Float
+  {- Strictness: m,
+     Unfolding: (GHC.Types.F# (GHC.Prim.atanFloat# 1.1142857#)) -}
+d321d4f41f0c02e23f106f54b2995fdb
+  heartHeight :: GHC.Types.Float
+  {- Strictness: m, Unfolding: (Constants.digitHeight) -}
+2a59a1c83b70fce9ab1f1305aa4e444d
+  heartWidth :: GHC.Types.Float
+  {- Strictness: m, Unfolding: (Constants.digitHeight) -}
+2c007419f91e2be6ce8a08181ac4e47f
+  hitPointAngleLeft :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# 1.5707964#) -}
+7fad90328f34af28d33687efe91d9235
+  hitPointAngleRight :: GHC.Types.Float
+  {- Strictness: m,
+     Unfolding: InlineRule (0, True, True) Constants.hammerMaxAngle -}
+18dfece3cb05327e35f97b75c0d2a0db
+  hitPointRadiusLeft :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 78.0#) -}
+56003076ea59701dceb68f9fd188864f
+  hitPointRadiusRight :: GHC.Types.Float
+  {- Strictness: m,
+     Unfolding: (GHC.Types.F#
+                   (GHC.Prim.sqrtFloat#
+                      (GHC.Prim.plusFloat#
+                         (GHC.Prim.powerFloat# 70.0# 2.0#)
+                         (GHC.Prim.powerFloat# 78.0# 2.0#)))) -}
+a2535d22d253fdd70e4bd59c635f0d3d
+  initGameState :: Types.GameState
+  {- Unfolding: (Types.GameState
+                   Constants.initGameState4
+                   (GHC.Types.[] @ Types.Weeb)
+                   Constants.hammerMaxAngle
+                   (GHC.Base.Nothing @ Types.SwingDirection)
+                   Constants.initGameState3
+                   Constants.initGameState3
+                   Constants.initGameState2
+                   Constants.initGameState1
+                   Types.Extreme
+                   Constants.initGameState3
+                   GHC.Types.False
+                   (GHC.Types.[] @ Types.Sound)) -}
+8aec89417955eb95d59d629d4b6ac021
+  initGameState1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 7#) -}
+023f72db55dee04f2a04bc96dbd6000c
+  initGameState2 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+3fa9f7f6c32b43ae8671f7d7c90c8dc4
+  initGameState3 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.0#) -}
+f063e5afd7bde5069ead2ee84c3898fd
+  initGameState4 :: Types.Player
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Types.Player
+                   Constants.initGameState7
+                   Constants.initGameState3
+                   Types.Left
+                   (GHC.Types.[] @ Graphics.UI.GLFW.Types.Key)
+                   Constants.initGameState6
+                   Constants.initGameState5) -}
+626583acc9591a9375f56bdaa1137cbf
+  initGameState5 :: (Types.Action, [Types.Frame])
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Constants.initGameState6,
+                  GHC.Types.[] @ Types.Frame)) -}
+928220ff4cca5250e1fdd8267023be51
+  initGameState6 :: Types.Action
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Types.Still Types.Left) -}
+abd7f955c942f170781ea595515cb9e6
+  initGameState7 :: (GHC.Types.Float, GHC.Types.Float)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Constants.initGameState3,
+                  Constants.initGameState3)) -}
+0c611039b46097d19e3039ed54a23d48
+  jumpSpeed :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# 864000.0#) -}
+7e958a8a5ed4c12bd8ace7adab30c084
+  maxWeebCooldown :: Types.Difficulty -> GHC.Types.Float
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Difficulty) ->
+                 case ds of wild {
+                   Types.Easy -> Constants.maxWeebCooldown3
+                   Types.Medium -> Constants.maxWeebCooldown2
+                   Types.Hard -> Constants.maxWeebCooldown2
+                   Types.Extreme -> Constants.maxWeebCooldown1 }) -}
+59bf31aea815df557b2811e1c63f6dae
+  maxWeebCooldown1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 1.5#) -}
+379896f5b014425ac48e4c7f660997a8
+  maxWeebCooldown2 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 2.0#) -}
+a48f9116395dc32865c3d1228364afc9
+  maxWeebCooldown3 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 3.0#) -}
+9d6797272bf944cd46445d2f4f28438f
+  minWeebCooldown :: Types.Difficulty -> GHC.Types.Float
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Difficulty) ->
+                 case ds of wild {
+                   Types.Easy -> Constants.maxWeebCooldown1
+                   Types.Medium -> Constants.deadTimer
+                   Types.Hard -> Constants.minWeebCooldown2
+                   Types.Extreme -> Constants.minWeebCooldown1 }) -}
+3b9bb98a8bd44c0970b655ab116bfc31
+  minWeebCooldown1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.6#) -}
+657c77a29eb7a06609898187900e6d13
+  minWeebCooldown2 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.8#) -}
+8f8f7790ecb3dedfa36cabd46abe8331
+  moveSpeed :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 512.0#) -}
+20aa4cc028eb648cd5d3a356b82da38b
+  swingSpeed :: GHC.Types.Float
+  {- Unfolding: (case Constants.hammerMaxAngle of wild { GHC.Types.F# x ->
+                 GHC.Types.F# (GHC.Prim.divideFloat# x 0.15#) }) -}
+852d004d27d98d8cb995d46e8f36f75f
+  torbHeight :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 144.0#) -}
+5ffb70d5728afa40430d03bad58b9a55
+  torbHeightScale :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.2#) -}
+0074dfd900f3efc7ad6b70ea4d8617de
+  torbRatio :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# 0.60096157#) -}
+4bf137c23dc1cae4c53dcce94dbca3ba
+  torbSpriteHeight :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 208.0#) -}
+c6caa0b1747d1208929fbf74834ebc9b
+  torbSpriteWidth :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 125.0#) -}
+789c5f98cc37e5a13b7763de34324e08
+  torbWidth :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# 86.53847#) -}
+5960789e111c26223cb36806b39d576e
+  weebHeight :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# 102.85715#) -}
+e90378ff77745e52ecaf928a2e8196bb
+  weebHeightScale :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# 0.14285715#) -}
+b5c806937982b897a423969524b0da85
+  weebRatio :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# 0.9302326#) -}
+7bf90198fbef623fadc7f5974af4874a
+  weebSpriteHeight :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 129.0#) -}
+de166d908bce89c76ec9f43a31cef48e
+  weebSpriteWidth :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 120.0#) -}
+1525ac377906a1d9f15257be5d0bfc24
+  weebWidth :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.F# 95.68107#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,0 +1,1537 @@
+
+==================== FINAL INTERFACE ====================
+2018-08-03 18:59:34.0388854 UTC
+
+interface main:Types 8043
+  interface hash: 88a7ba76f8d18be40f004313840a0c1f
+  ABI hash: 86017bc6ec9258d54a2cd0a7197d3a23
+  export-list hash: cdab6bcc0f25b78227451b5170314fa3
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 05a7dfc725707cda3dfdbf87b0f28b5d
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Types.Action{Types.Falling Types.Running Types.Still}
+  Types.Animation
+  Types.Difficulty{Types.Easy Types.Extreme Types.Hard Types.Medium}
+  Types.Dimensions
+  Types.Direction{Types.Left Types.Right}
+  Types.Frame
+  Types.GameState{Types.GameState diffCooldown difficulty gameEnded hammerAngle lives player points soundQueue swingCooldown swingDirection weebCooldown weebs}
+  Types.Player{Types.Player animation playerAction playerFacing playerPos playerVel pressedKeys}
+  Types.Position
+  Types.Sound{Types.SoundDisappear Types.SoundHit Types.SoundLose}
+  Types.Sounds{Types.Sounds sound1 sound2}
+  Types.Sprite{Types.Sprite}
+  Types.Sprites{Types.Sprites digit0 digit1 digit2 digit3 digit4 digit5 digit6 digit7 digit8 digit9 garbageGenjis heart noodleMunchinNarutos shittyShimadas torbFallLeft torbFallRight torbHammerLeft torbHammerRight torbRunLeft torbRunRight torbStillLeft torbStillRight weakWeebs weebDabLeft weebDabRight weebSmackedLeft1 weebSmackedLeft2 weebSmackedRight1 weebSmackedRight2 weebStillLeft weebStillRight}
+  Types.SwingDirection{Types.SwingDown Types.SwingUp}
+  Types.Weeb{Types.Weeb weebAction weebAlive weebAnimation weebDead weebPos}
+  Types.WeebAction{Types.Dead Types.Normal}
+module dependencies:
+package dependencies: GLFW-b-3.2.1.0 GLURaw-2.0.0.4 GLUT-2.7.0.13
+                      ObjectName-1.1.0.1 OpenGL-3.0.2.1 OpenGLRaw-3.3.0.2
+                      StateVar-1.1.1.0 array-0.5.2.0 base-4.11.1.0 binary-0.8.5.1
+                      bindings-GLFW-3.2.1.1 bmp-1.2.6.3 bytestring-0.10.8.2
+                      containers-0.5.11.0 deepseq-1.4.3.0 fixed-0.2.1.1 ghc-boot-th-8.4.3
+                      ghc-prim-0.5.2.0 gloss-1.12.0.0 gloss-rendering-1.12.0.0 half-0.3
+                      integer-gmp-1.0.2.0 pretty-1.1.3.6 stm-2.4.5.0
+                      template-haskell-2.13.0.0 text-1.2.3.0
+orphans: stm-2.4.5.0:Control.Monad.STM text-1.2.3.0:Data.Text
+         binary-0.8.5.1:Data.Binary.Generic text-1.2.3.0:Data.Text.Show
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         GLFW-b-3.2.1.0:Graphics.UI.GLFW.Types base-4.11.1.0:GHC.Float
+         base-4.11.1.0:GHC.Base
+family instance modules: GLFW-b-3.2.1.0:Graphics.UI.GLFW.Types
+                         base-4.11.1.0:Control.Applicative base-4.11.1.0:Data.Complex
+                         base-4.11.1.0:Data.Functor.Compose base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         containers-0.5.11.0:Data.IntMap.Internal
+                         containers-0.5.11.0:Data.IntSet.Internal
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Sequence.Internal
+                         containers-0.5.11.0:Data.Set.Internal containers-0.5.11.0:Data.Tree
+                         ghc-boot-th-8.4.3:GHC.ForeignSrcLang.Type
+                         ghc-boot-th-8.4.3:GHC.LanguageExtensions.Type half-0.3:Numeric.Half
+                         pretty-1.1.3.6:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.6:Text.PrettyPrint.HughesPJ
+                         template-haskell-2.13.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.3.0:Data.Text
+import  -/  GLFW-b-3.2.1.0:Graphics.UI.GLFW 86f3667524073c1d9547e4e903e843d3
+import  -/  GLFW-b-3.2.1.0:Graphics.UI.GLFW.Types 9cda662418961203831abeb5efb31d4a
+import  -/  base-4.11.1.0:GHC.Base b7dd14d8fe8d606dde5678ea6b0575e9
+import  -/  base-4.11.1.0:GHC.Show 6211aec7cccd267a5ee999e4414d7b90
+import  -/  base-4.11.1.0:Prelude aca391812f777207b15d62bb5b9feb63
+import  -/  ghc-prim-0.5.2.0:GHC.Classes f7d67fd97d5a20e9252c9597d1aa387b
+import  -/  gloss-1.12.0.0:Graphics.Gloss.Data.Picture 40e4525670fd0abee94036db3229b6e0
+import  -/  gloss-rendering-1.12.0.0:Graphics.Gloss.Internals.Data.Picture ecb1ccb6474f00909fc4dc64349e5f2c
+5a2d35b3ff6b0ed758de4a1919c4a683
+  $fEqAction :: GHC.Classes.Eq Types.Action
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Types.Action Types.$fEqAction_$c== Types.$fEqAction_$c/= -}
+5a2d35b3ff6b0ed758de4a1919c4a683
+  $fEqAction_$c/= :: Types.Action -> Types.Action -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Types.Action) (y :: Types.Action) ->
+                 case Types.$fEqAction_$c== x y of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
+5a2d35b3ff6b0ed758de4a1919c4a683
+  $fEqAction_$c== :: Types.Action -> Types.Action -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (ds :: Types.Action) (ds1 :: Types.Action) ->
+                 case ds of wild {
+                   Types.Running a1
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Types.Running b1 -> Types.$fEqAction_$c==1 a1 b1 }
+                   Types.Still a1
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Types.Still b1 -> Types.$fEqAction_$c==1 a1 b1 }
+                   Types.Falling a1
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False
+                        Types.Falling b1 -> Types.$fEqAction_$c==1 a1 b1 } }) -}
+fd04e95d466d62d6c107e0e8ad795a53
+  $fEqAction_$c==1 ::
+    Types.Direction -> Types.Direction -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Types.Direction) (ds1 :: Types.Direction) ->
+                 case ds of wild {
+                   Types.Left
+                   -> case ds1 of wild1 {
+                        Types.Left -> GHC.Types.True Types.Right -> GHC.Types.False }
+                   Types.Right
+                   -> case ds1 of wild1 {
+                        Types.Left -> GHC.Types.False Types.Right -> GHC.Types.True } }) -}
+fd04e95d466d62d6c107e0e8ad795a53
+  $fEqDirection :: GHC.Classes.Eq Types.Direction
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Types.Direction
+                  Types.$fEqAction_$c==1
+                  Types.$fEqDirection_$c/= -}
+fd04e95d466d62d6c107e0e8ad795a53
+  $fEqDirection_$c/= ::
+    Types.Direction -> Types.Direction -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Types.Direction) (y :: Types.Direction) ->
+                 case x of wild {
+                   Types.Left
+                   -> case y of wild1 {
+                        Types.Left -> GHC.Types.False Types.Right -> GHC.Types.True }
+                   Types.Right
+                   -> case y of wild1 {
+                        Types.Left -> GHC.Types.True Types.Right -> GHC.Types.False } }) -}
+766488175b7bef9cc12b0ed2440614cd
+  $fEqSwingDirection :: GHC.Classes.Eq Types.SwingDirection
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Types.SwingDirection
+                  Types.$fEqSwingDirection_$c==
+                  Types.$fEqSwingDirection_$c/= -}
+766488175b7bef9cc12b0ed2440614cd
+  $fEqSwingDirection_$c/= ::
+    Types.SwingDirection -> Types.SwingDirection -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Types.SwingDirection) (y :: Types.SwingDirection) ->
+                 case x of wild {
+                   Types.SwingUp
+                   -> case y of wild1 {
+                        Types.SwingUp -> GHC.Types.False
+                        Types.SwingDown -> GHC.Types.True }
+                   Types.SwingDown
+                   -> case y of wild1 {
+                        Types.SwingUp -> GHC.Types.True
+                        Types.SwingDown -> GHC.Types.False } }) -}
+766488175b7bef9cc12b0ed2440614cd
+  $fEqSwingDirection_$c== ::
+    Types.SwingDirection -> Types.SwingDirection -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Types.SwingDirection) (ds1 :: Types.SwingDirection) ->
+                 case ds of wild {
+                   Types.SwingUp
+                   -> case ds1 of wild1 {
+                        Types.SwingUp -> GHC.Types.True
+                        Types.SwingDown -> GHC.Types.False }
+                   Types.SwingDown
+                   -> case ds1 of wild1 {
+                        Types.SwingUp -> GHC.Types.False
+                        Types.SwingDown -> GHC.Types.True } }) -}
+81ef1563532d42b133704282a8ccf89b
+  $fEqWeebAction :: GHC.Classes.Eq Types.WeebAction
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Types.WeebAction
+                  Types.$fEqWeebAction_$c==
+                  Types.$fEqWeebAction_$c/= -}
+81ef1563532d42b133704282a8ccf89b
+  $fEqWeebAction_$c/= ::
+    Types.WeebAction -> Types.WeebAction -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Inline: (sat-args=2),
+     Unfolding: InlineRule (2, False, False)
+                (\ (x :: Types.WeebAction) (y :: Types.WeebAction) ->
+                 case x of wild {
+                   Types.Normal
+                   -> case y of wild1 {
+                        Types.Normal -> GHC.Types.False Types.Dead -> GHC.Types.True }
+                   Types.Dead
+                   -> case y of wild1 {
+                        Types.Normal -> GHC.Types.True
+                        Types.Dead -> GHC.Types.False } }) -}
+81ef1563532d42b133704282a8ccf89b
+  $fEqWeebAction_$c== ::
+    Types.WeebAction -> Types.WeebAction -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Types.WeebAction) (ds1 :: Types.WeebAction) ->
+                 case ds of wild {
+                   Types.Normal
+                   -> case ds1 of wild1 {
+                        Types.Normal -> GHC.Types.True Types.Dead -> GHC.Types.False }
+                   Types.Dead
+                   -> case ds1 of wild1 {
+                        Types.Normal -> GHC.Types.False
+                        Types.Dead -> GHC.Types.True } }) -}
+70757ca2726e50931866d5492951c3eb
+  $fShowWeeb :: GHC.Show.Show Types.Weeb
+  DFunId
+  {- Strictness: m, Inline: CONLIKE,
+     Unfolding: DFun:.
+                  @ Types.Weeb
+                  Types.$fShowWeeb_$cshowsPrec
+                  Types.$fShowWeeb_$cshow
+                  Types.$fShowWeeb_$cshowList -}
+a9d13f2104b4649718c220ccaa7fa533
+  $fShowWeeb1 :: [GHC.Types.Char]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.$fShow(,)2
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+2c5d9313ff96304d5c040523c274a8fa
+  $fShowWeeb2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Mada mada!"#) -}
+70757ca2726e50931866d5492951c3eb
+  $fShowWeeb_$cshow :: Types.Weeb -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U(1*U(1*U(U),1*U(U)),A,A,A,A)>,
+     Unfolding: (\ (weeb :: Types.Weeb) ->
+                 GHC.CString.unpackAppendCString#
+                   Types.$fShowWeeb2
+                   (case weeb of wild { Types.Weeb ds ds1 ds2 ds3 ds4 ->
+                    case ds of ww { (,) ww1 ww2 ->
+                    GHC.Types.:
+                      @ GHC.Types.Char
+                      GHC.Show.$fShow(,)4
+                      (case ww1 of ww4 { GHC.Types.F# ww5 ->
+                       GHC.Float.$w$sshowSignedFloat1
+                         GHC.Float.$fShowFloat2
+                         GHC.Show.$fShow(,)1
+                         ww5
+                         (GHC.Types.:
+                            @ GHC.Types.Char
+                            GHC.Show.showList__1
+                            (case ww2 of ww6 { GHC.Types.F# ww7 ->
+                             GHC.Show.$fShow(,)_$sgo1
+                               Types.$fShowWeeb1
+                               (GHC.Float.$w$sshowSignedFloat1
+                                  GHC.Float.$fShowFloat2
+                                  GHC.Show.$fShow(,)1
+                                  ww7)
+                               (GHC.Types.[] @ GHC.Show.ShowS) })) }) } })) -}
+70757ca2726e50931866d5492951c3eb
+  $fShowWeeb_$cshowList :: [Types.Weeb] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ls :: [Types.Weeb]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ Types.Weeb Types.$w$cshowsPrec ls s) -}
+70757ca2726e50931866d5492951c3eb
+  $fShowWeeb_$cshowsPrec ::
+    GHC.Types.Int -> Types.Weeb -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <L,A><L,1*U(1*U(1*U(U),1*U(U)),A,A,A,A)><L,1*U>,
+     Inline: [0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Types.Weeb)
+                   (w2 :: GHC.Base.String) ->
+                 Types.$w$cshowsPrec w1 w2) -}
+0ef48a7f27cc70effc2c541e90734799
+  $tc'Dead :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15141306248674495266##
+                   8194333879014338663##
+                   Types.$trModule
+                   Types.$tc'Dead2
+                   0#
+                   Types.$tc'Dead1) -}
+ded5b12065cfa910fe3c8320347bdc91
+  $tc'Dead1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+0c35cf0e84a58edf091923cfd385e282
+  $tc'Dead2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Dead3) -}
+9d01b5d9f759d48a51af4a8328321ac7
+  $tc'Dead3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Dead"#) -}
+53d2418c62686bc3d1d43b6189d826ec
+  $tc'Easy :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3068104661341874748##
+                   16068495156994616447##
+                   Types.$trModule
+                   Types.$tc'Easy2
+                   0#
+                   Types.$tc'Easy1) -}
+61e1175bcacfcc3c18d9aab939a7606f
+  $tc'Easy1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+b76e47ea79ffc72bf52c6115bb8e5cdd
+  $tc'Easy2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Easy3) -}
+a1771eed0e4607a6e752e5e2b58c59bc
+  $tc'Easy3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Easy"#) -}
+9862a365936bf8b1e57591681045b9f9
+  $tc'Extreme :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5771355793079368647##
+                   16209656757858124156##
+                   Types.$trModule
+                   Types.$tc'Extreme1
+                   0#
+                   Types.$tc'Easy1) -}
+489d823bf1834160a3d79c3037ce6d72
+  $tc'Extreme1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Extreme2) -}
+03e7219ebfe9ab70ae88d838348dcb00
+  $tc'Extreme2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Extreme"#) -}
+1763ade722151fe9ea4c0ed4cf4dc4fd
+  $tc'Falling :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   583605170926740606##
+                   814423390959177552##
+                   Types.$trModule
+                   Types.$tc'Falling2
+                   0#
+                   Types.$tc'Falling1) -}
+3209d181031008fe0a99dc57ad7960ab
+  $tc'Falling1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+0caa486068057c16a03ac941c2adfe22
+  $tc'Falling2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Falling3) -}
+204cacbc6373b80978f9c17d25a666a0
+  $tc'Falling3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Falling"#) -}
+29e735ae789bad7fb0b853f44657edc0
+  $tc'GameState :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2216026670461144557##
+                   14941724809116118753##
+                   Types.$trModule
+                   Types.$tc'GameState2
+                   0#
+                   Types.$tc'GameState1) -}
+ff68ac04d071452a780c33913126e43b
+  $tc'GameState1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+f13f2db62afbbe2e2cf1345f85cb391b
+  $tc'GameState2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'GameState3) -}
+12e41f93859f9af7eb085482c6cb0e77
+  $tc'GameState3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'GameState"#) -}
+7ee5ea49b20afd05f7bc937d72e4a7dd
+  $tc'Hard :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15802811163631990315##
+                   13694604485232129877##
+                   Types.$trModule
+                   Types.$tc'Hard1
+                   0#
+                   Types.$tc'Easy1) -}
+d254746912c71da53f3e2c649e48f4f1
+  $tc'Hard1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Hard2) -}
+540e0c576f92047e688d6c94b1b184f8
+  $tc'Hard2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Hard"#) -}
+726201e86326abd80b5ffeaa2088bdb6
+  $tc'Left :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15989926833677941767##
+                   9133598640723029275##
+                   Types.$trModule
+                   Types.$tc'Left2
+                   0#
+                   Types.$tc'Left1) -}
+d34baaefb5d5a1caf87b800f32c04a9f
+  $tc'Left1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+7716e2c290543842bb953acc4a3a0438
+  $tc'Left2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Left3) -}
+4be168a2dc7c1307ab800322d85291d1
+  $tc'Left3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Left"#) -}
+51084d16701e2da21cd11beaf39579c6
+  $tc'Medium :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12375303972619732826##
+                   4591858465083730213##
+                   Types.$trModule
+                   Types.$tc'Medium1
+                   0#
+                   Types.$tc'Easy1) -}
+dc6764a85b96affd54c70f171592ad50
+  $tc'Medium1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Medium2) -}
+514092440441aaa23656d87b6c7d11dd
+  $tc'Medium2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Medium"#) -}
+c6ae9e9df643a30bf3aee526566e6fbf
+  $tc'Normal :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   13380707208716239264##
+                   13182628012941094681##
+                   Types.$trModule
+                   Types.$tc'Normal1
+                   0#
+                   Types.$tc'Dead1) -}
+c33f83fa8fef9f04b444e9b76dca737c
+  $tc'Normal1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Normal2) -}
+3ec8f9b66442b176bce4cb6ccb916ff4
+  $tc'Normal2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Normal"#) -}
+3b5c63d11092f69bac3f75100e03c7b1
+  $tc'Player :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7544676149182388229##
+                   4176353278168982821##
+                   Types.$trModule
+                   Types.$tc'Player2
+                   0#
+                   Types.$tc'Player1) -}
+8cb84cea9f6d800e52648d8718aa3ac9
+  $tc'Player1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+deba7690bf75d0f8c6a10d583e975cd6
+  $tc'Player2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Player3) -}
+97f3a8a3a30773c4eb704916bb0dc186
+  $tc'Player3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Player"#) -}
+c6112bfbbe8db7b0adf90c94fe378349
+  $tc'Right :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7554565813576553326##
+                   6120542235150555079##
+                   Types.$trModule
+                   Types.$tc'Right1
+                   0#
+                   Types.$tc'Left1) -}
+14b8ea3b4ac00f9f684fc33b5d0da0be
+  $tc'Right1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Right2) -}
+8c1c5b18ddaadcbc68c6fd55ce458fdf
+  $tc'Right2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Right"#) -}
+2046de7eb540dc4a5f5ff347e93589c6
+  $tc'Running :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11466578200133396891##
+                   13826229182973262358##
+                   Types.$trModule
+                   Types.$tc'Running1
+                   0#
+                   Types.$tc'Falling1) -}
+6e91de7ffb4d39f4d9272de10a5025b1
+  $tc'Running1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Running2) -}
+b1be45fc61b7899b93876e5dfb337bf9
+  $tc'Running2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Running"#) -}
+145ded751f73d5035a56b06999e55bde
+  $tc'SoundDisappear :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8842811382485706202##
+                   4050049721754221711##
+                   Types.$trModule
+                   Types.$tc'SoundDisappear2
+                   0#
+                   Types.$tc'SoundDisappear1) -}
+ebca4cddfa4297f3123761effba68132
+  $tc'SoundDisappear1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+062acfc442d05b8c0954f7398066d2e1
+  $tc'SoundDisappear2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'SoundDisappear3) -}
+b510fc534019fe76122e4450576b738f
+  $tc'SoundDisappear3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'SoundDisappear"#) -}
+8170196fe71e76830f2f1c99a7bdc78b
+  $tc'SoundHit :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16589244716239987309##
+                   9167755252225148465##
+                   Types.$trModule
+                   Types.$tc'SoundHit1
+                   0#
+                   Types.$tc'SoundDisappear1) -}
+fd53358b335e399455079b242539742a
+  $tc'SoundHit1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'SoundHit2) -}
+8a6f177d0fe63af764e976fed26b2f66
+  $tc'SoundHit2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'SoundHit"#) -}
+58e63c7f537abc867d723d40f3af0f39
+  $tc'SoundLose :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5108849510031038055##
+                   11767392676254155706##
+                   Types.$trModule
+                   Types.$tc'SoundLose1
+                   0#
+                   Types.$tc'SoundDisappear1) -}
+76e7db04784a78533b09eeb7d94d2944
+  $tc'SoundLose1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'SoundLose2) -}
+fbe870f6c392f952001da7821b471530
+  $tc'SoundLose2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'SoundLose"#) -}
+34b8748861279524c4c8bd9830b12e83
+  $tc'Sounds :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9402530955204123427##
+                   11583409478395376331##
+                   Types.$trModule
+                   Types.$tc'Sounds2
+                   0#
+                   Types.$tc'Sounds1) -}
+0c0dd7ad22aac43bc0127326cb66073f
+  $tc'Sounds1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+3fd4ce94b3b33fb138e073b5312e2e5f
+  $tc'Sounds2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Sounds3) -}
+6fdeaf95c3d6f507868d40f9fb99014d
+  $tc'Sounds3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Sounds"#) -}
+667d95f038f3dbfca1e3182a12591648
+  $tc'Sprite :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11937220757249659137##
+                   4917620794003927450##
+                   Types.$trModule
+                   Types.$tc'Sprite2
+                   0#
+                   Types.$tc'Sprite1) -}
+601430154bbe8649e34abf9c2e07712a
+  $tc'Sprite1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+7f60f4f70fc8b532a6e646736b6715d7
+  $tc'Sprite2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Sprite3) -}
+1f6955ed5e817d94e3f64dfcdf755f3f
+  $tc'Sprite3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Sprite"#) -}
+89f05eb0fe0388f52184a996986d6425
+  $tc'Sprites :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2480690140185136738##
+                   8432246344685852378##
+                   Types.$trModule
+                   Types.$tc'Sprites2
+                   0#
+                   Types.$tc'Sprites1) -}
+c7c6578fb0c174bb6327e6c0c875553e
+  $tc'Sprites1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+427e1841f5d8dd781bce41f3c104cfb6
+  $tc'Sprites2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Sprites3) -}
+70a297b2374fe8024675503d6c095252
+  $tc'Sprites3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Sprites"#) -}
+9a25a48dcbb206a2f12c5940ef338f9f
+  $tc'Still :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14681378097566960155##
+                   3370418580149923909##
+                   Types.$trModule
+                   Types.$tc'Still1
+                   0#
+                   Types.$tc'Falling1) -}
+8c430f2562872c888d275881aec53bfd
+  $tc'Still1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Still2) -}
+f88f417fbf580bcb2643c9742a0a99d3
+  $tc'Still2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Still"#) -}
+c2072ab3fc2167f34e3c633b6b0731dd
+  $tc'SwingDown :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   546143051204839430##
+                   1176542621376876312##
+                   Types.$trModule
+                   Types.$tc'SwingDown2
+                   0#
+                   Types.$tc'SwingDown1) -}
+1efb6fb9c021f4b73149bf1d1d38540a
+  $tc'SwingDown1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
+82421628c84af668b0753f6f34d0d184
+  $tc'SwingDown2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'SwingDown3) -}
+9718b3f2dcc4d563aa21bb1cdbf21e26
+  $tc'SwingDown3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'SwingDown"#) -}
+d0a8f70e16af1868794cc13083836753
+  $tc'SwingUp :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17265578660236528557##
+                   12581949130120706718##
+                   Types.$trModule
+                   Types.$tc'SwingUp1
+                   0#
+                   Types.$tc'SwingDown1) -}
+616769e0275ca66199847f8b81ac0c3e
+  $tc'SwingUp1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'SwingUp2) -}
+c020392de24507dd92e2d5d1d9914c87
+  $tc'SwingUp2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'SwingUp"#) -}
+f406113c4a84e5529856a95c8be68343
+  $tc'Weeb :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9297543476983113103##
+                   10179973788313529170##
+                   Types.$trModule
+                   Types.$tc'Weeb2
+                   0#
+                   Types.$tc'Weeb1) -}
+bfad08466b704dd6b70ddd572555daba
+  $tc'Weeb1 :: GHC.Types.KindRep
+  {- HasNoCafRefs, Strictness: m4, Inline: [~] -}
+20282b8f540848904f16eb6f86623657
+  $tc'Weeb2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tc'Weeb3) -}
+5f5b0bb2a8b57809c3b778396b45f036
+  $tc'Weeb3 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("'Weeb"#) -}
+ff6fa010738691580ce9d97277db6a1b
+  $tcAction :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   8226628494736018676##
+                   13564724804729784848##
+                   Types.$trModule
+                   Types.$tcAction1
+                   0#
+                   GHC.Types.krep$*) -}
+af6560b24f4cfe1120963cf59d8405c4
+  $tcAction1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tcAction2) -}
+160d40b680bd2d2ca24b80671f7cd095
+  $tcAction2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Action"#) -}
+67541e0f76a4c00d14e01bdcaf167180
+  $tcDifficulty :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   14369814860690624107##
+                   5002876540558245112##
+                   Types.$trModule
+                   Types.$tcDifficulty1
+                   0#
+                   GHC.Types.krep$*) -}
+4b50bb41a37a4515163a970d4489853b
+  $tcDifficulty1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tcDifficulty2) -}
+69da884fd0642a8e667cb97149a1d4c8
+  $tcDifficulty2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Difficulty"#) -}
+2f0750c6e1e2985112a01eaa96c02d41
+  $tcDirection :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   124243282175780809##
+                   9389368446562992992##
+                   Types.$trModule
+                   Types.$tcDirection1
+                   0#
+                   GHC.Types.krep$*) -}
+5b8f9e728d3c4a0b8eca6c2758cd1dd7
+  $tcDirection1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tcDirection2) -}
+09291334c75500a36033b65772fa6fef
+  $tcDirection2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Direction"#) -}
+3a94faeae60fed876ebaa5898df6439e
+  $tcGameState :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15167992008570174245##
+                   18238549668430399841##
+                   Types.$trModule
+                   Types.$tcGameState1
+                   0#
+                   GHC.Types.krep$*) -}
+5d1f14ccf3d81c048b750e5a346bafad
+  $tcGameState1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tcGameState2) -}
+955af4b9ad6f02befcc457c662da3d55
+  $tcGameState2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("GameState"#) -}
+51d345492ba91937e4ae47c72d4599ca
+  $tcPlayer :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9898367040316776417##
+                   11905657489195647198##
+                   Types.$trModule
+                   Types.$tcPlayer1
+                   0#
+                   GHC.Types.krep$*) -}
+7eb6cbbc1ca11d6cccd12f029456d77f
+  $tcPlayer1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tcPlayer2) -}
+f70d6d0e806d1bd7989f4e4a7787b268
+  $tcPlayer2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Player"#) -}
+4abaae2de7bf6db127f5fec7910614c5
+  $tcSound :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15951452074305284525##
+                   13281731282632462637##
+                   Types.$trModule
+                   Types.$tcSound1
+                   0#
+                   GHC.Types.krep$*) -}
+ae9109a62bb8061d81c33cb2dc1fcd68
+  $tcSound1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tcSound2) -}
+67cb6871dd6f258d0be1f39c8873c4c4
+  $tcSound2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Sound"#) -}
+12a2b3f3dfeff2240348f432fae8da88
+  $tcSounds :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9460518471503343103##
+                   3670901804868677851##
+                   Types.$trModule
+                   Types.$tcSounds1
+                   0#
+                   GHC.Types.krep$*) -}
+25bc22b965f03c3054072cb1c4907f24
+  $tcSounds1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tcSounds2) -}
+14b61d984664f0d605813fac895dbb53
+  $tcSounds2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Sounds"#) -}
+4a4fbceefb561c7bf54c26d029d2d07e
+  $tcSprite :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2999215205446747805##
+                   8420567691483871598##
+                   Types.$trModule
+                   Types.$tcSprite1
+                   0#
+                   GHC.Types.krep$*) -}
+8b5a837ac84e37aacc4765ef7e2fa0c1
+  $tcSprite1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tcSprite2) -}
+b8b79c3506fbd8ef7ef5e0d279c2770b
+  $tcSprite2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Sprite"#) -}
+0ff6175080c371dd918d7c58e9737aff
+  $tcSprites :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9333674870986753570##
+                   10651537184584588242##
+                   Types.$trModule
+                   Types.$tcSprites1
+                   0#
+                   GHC.Types.krep$*) -}
+33477f0a53572f61225d047dcf62f751
+  $tcSprites1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tcSprites2) -}
+e1fe8f7b3f2575a8244b33ac583e4f34
+  $tcSprites2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Sprites"#) -}
+d23b42a227435340cc5321c083dab161
+  $tcSwingDirection :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7609578997232017244##
+                   8416224179574191375##
+                   Types.$trModule
+                   Types.$tcSwingDirection1
+                   0#
+                   GHC.Types.krep$*) -}
+8a2b5ecc4fcd38cafa2d2f0bcd531b3b
+  $tcSwingDirection1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tcSwingDirection2) -}
+3ccd4140797dcd49dd3242fa70884d2b
+  $tcSwingDirection2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("SwingDirection"#) -}
+8f2ddf3862b5231041c8e0c3be004183
+  $tcWeeb :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   310164508925257807##
+                   18226260046270681187##
+                   Types.$trModule
+                   Types.$tcWeeb1
+                   0#
+                   GHC.Types.krep$*) -}
+8b6ad61dd3812e623e5e37167bcc2cf9
+  $tcWeeb1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tcWeeb2) -}
+54d80b95071631d6f2b325ac166a9e1c
+  $tcWeeb2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Weeb"#) -}
+2017ab2f7f41edfe9d4750378970850c
+  $tcWeebAction :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11132532100225671785##
+                   11126649417418928704##
+                   Types.$trModule
+                   Types.$tcWeebAction1
+                   0#
+                   GHC.Types.krep$*) -}
+a2119d2f8949d463b6ad5b6e9fdfe248
+  $tcWeebAction1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$tcWeebAction2) -}
+460985bb6d9c0df0f4c2268c196581c9
+  $tcWeebAction2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("WeebAction"#) -}
+f0b0c631977c06394b8fa5a6eac9a87d
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Types.$trModule3 Types.$trModule1) -}
+b8a341ba0daf480543041d8abd6e221d
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$trModule2) -}
+6041368dbbc5427415dfd0c007a9dc0b
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Types"#) -}
+0e8639ca5d59459d020870a9dcb25689
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Types.$trModule4) -}
+e1b3e3d147beccf53766a0da95111e0d
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+70757ca2726e50931866d5492951c3eb
+  $w$cshowsPrec :: Types.Weeb -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2,
+     Strictness: <L,1*U(1*U(1*U(U),1*U(U)),A,A,A,A)><L,1*U>,
+     Inline: [0],
+     Unfolding: (\ (w :: Types.Weeb) (w1 :: GHC.Base.String) ->
+                 GHC.CString.unpackAppendCString#
+                   Types.$fShowWeeb2
+                   (case w of wild { Types.Weeb ds ds1 ds2 ds3 ds4 ->
+                    case ds of ww { (,) ww1 ww2 ->
+                    GHC.Base.++_$s++
+                      @ GHC.Types.Char
+                      w1
+                      GHC.Show.$fShow(,)4
+                      (case ww1 of ww4 { GHC.Types.F# ww5 ->
+                       GHC.Float.$w$sshowSignedFloat1
+                         GHC.Float.$fShowFloat2
+                         GHC.Show.$fShow(,)1
+                         ww5
+                         (GHC.Types.:
+                            @ GHC.Types.Char
+                            GHC.Show.showList__1
+                            (case ww2 of ww6 { GHC.Types.F# ww7 ->
+                             GHC.Show.$fShow(,)_$sgo1
+                               Types.$fShowWeeb1
+                               (GHC.Float.$w$sshowSignedFloat1
+                                  GHC.Float.$fShowFloat2
+                                  GHC.Show.$fShow(,)1
+                                  ww7)
+                               (GHC.Types.[] @ GHC.Show.ShowS) })) }) } })) -}
+5a2d35b3ff6b0ed758de4a1919c4a683
+  data Action
+    = Running Types.Direction
+    | Still Types.Direction
+    | Falling Types.Direction
+0690d0591eba0306c5f32cae73fc8df3
+  type Animation = [Types.Frame]
+7014142eceb4aa55045f9bb68a5a975e
+  data Difficulty = Easy | Medium | Hard | Extreme
+264c0668339d515d235b3f2d849b762b
+  type Dimensions = (GHC.Types.Float, GHC.Types.Float)
+fd04e95d466d62d6c107e0e8ad795a53
+  data Direction = Left | Right
+9ecc800ede3448cb57398fa830388887
+  type Frame = (Types.Sprite, GHC.Types.Float)
+4b258a32ea66243b92437ea70cfe13af
+  data GameState
+    = GameState {player :: Types.Player,
+                 weebs :: [Types.Weeb],
+                 hammerAngle :: GHC.Types.Float,
+                 swingDirection :: GHC.Base.Maybe Types.SwingDirection,
+                 swingCooldown :: GHC.Types.Float,
+                 weebCooldown :: GHC.Types.Float,
+                 points :: GHC.Types.Int,
+                 lives :: GHC.Types.Int,
+                 difficulty :: Types.Difficulty,
+                 diffCooldown :: GHC.Types.Float,
+                 gameEnded :: GHC.Types.Bool,
+                 soundQueue :: [Types.Sound]}
+3860cdc8ce3a18e2c97d80b31e2bdf29
+  data Player
+    = Player {playerPos :: Types.Position,
+              playerVel :: GHC.Types.Float,
+              playerFacing :: Types.Direction,
+              pressedKeys :: [Graphics.UI.GLFW.Types.Key],
+              playerAction :: Types.Action,
+              animation :: (Types.Action, Types.Animation)}
+4145c3e00efe8d0e2bb0b377642e4859
+  type Position = (GHC.Types.Float, GHC.Types.Float)
+086ef22e1667e6dd6c8bfbd65542b8f4
+  data Sound = SoundHit | SoundLose | SoundDisappear
+0d0772e8efebb462dcd67887b31ea04a
+  data Sounds
+    = Sounds {sound1 :: GHC.Base.String, sound2 :: GHC.Base.String}
+05cab5d6798e3cc2e13737e788324609
+  data Sprite
+    = Sprite Types.Dimensions
+             Graphics.Gloss.Internals.Data.Picture.Picture
+47a9f17b7173d851a6d4f4f2e7a93020
+  data Sprites
+    = Sprites {torbStillRight :: Types.Sprite,
+               torbStillLeft :: Types.Sprite,
+               torbHammerRight :: Types.Sprite,
+               torbHammerLeft :: Types.Sprite,
+               torbRunRight :: Types.Sprite,
+               torbRunLeft :: Types.Sprite,
+               torbFallRight :: Types.Sprite,
+               torbFallLeft :: Types.Sprite,
+               weebStillRight :: Types.Sprite,
+               weebStillLeft :: Types.Sprite,
+               weebDabRight :: Types.Sprite,
+               weebDabLeft :: Types.Sprite,
+               weebSmackedRight1 :: Types.Sprite,
+               weebSmackedLeft1 :: Types.Sprite,
+               weebSmackedRight2 :: Types.Sprite,
+               weebSmackedLeft2 :: Types.Sprite,
+               heart :: Types.Sprite,
+               digit0 :: Types.Sprite,
+               digit1 :: Types.Sprite,
+               digit2 :: Types.Sprite,
+               digit3 :: Types.Sprite,
+               digit4 :: Types.Sprite,
+               digit5 :: Types.Sprite,
+               digit6 :: Types.Sprite,
+               digit7 :: Types.Sprite,
+               digit8 :: Types.Sprite,
+               digit9 :: Types.Sprite,
+               weakWeebs :: Types.Sprite,
+               garbageGenjis :: Types.Sprite,
+               shittyShimadas :: Types.Sprite,
+               noodleMunchinNarutos :: Types.Sprite}
+766488175b7bef9cc12b0ed2440614cd
+  data SwingDirection = SwingUp | SwingDown
+70757ca2726e50931866d5492951c3eb
+  data Weeb
+    = Weeb {weebPos :: Types.Position,
+            weebAnimation :: (Types.WeebAction, Types.Animation),
+            weebAction :: Types.WeebAction,
+            weebDead :: GHC.Types.Float,
+            weebAlive :: GHC.Types.Float}
+81ef1563532d42b133704282a8ccf89b
+  data WeebAction = Normal | Dead
+3860cdc8ce3a18e2c97d80b31e2bdf29
+  animation :: Types.Player -> (Types.Action, Types.Animation)
+  RecSel Left Types.Player
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLS),1*U(A,A,A,A,A,1*U(U,U))>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Player) ->
+                 case ds of wild { Types.Player ds1 ds2 ds3 ds4 ds5 ds6 -> ds6 }) -}
+4b258a32ea66243b92437ea70cfe13af
+  diffCooldown :: Types.GameState -> GHC.Types.Float
+  RecSel Left Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLSLL),1*U(A,A,A,A,A,A,A,A,A,1*U(U),A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.GameState) ->
+                 case ds of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds10 }) -}
+4b258a32ea66243b92437ea70cfe13af
+  difficulty :: Types.GameState -> Types.Difficulty
+  RecSel Left Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLSLLL),1*U(A,A,A,A,A,A,A,A,1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.GameState) ->
+                 case ds of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds9 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  digit0 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLSLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds18 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  digit1 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLLSLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds19 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  digit2 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLLLSLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds20 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  digit3 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLLLLSLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds21 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  digit4 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLLLLLSLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds22 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  digit5 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLSLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds23 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  digit6 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLLSLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds24 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  digit7 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLLLSLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds25 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  digit8 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLLLLSLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds26 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  digit9 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLLLLLSLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds27 }) -}
+4b258a32ea66243b92437ea70cfe13af
+  gameEnded :: Types.GameState -> GHC.Types.Bool
+  RecSel Left Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLSL),1*U(A,A,A,A,A,A,A,A,A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.GameState) ->
+                 case ds of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds11 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  garbageGenjis :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLLLLLLLSLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds29 }) -}
+4b258a32ea66243b92437ea70cfe13af
+  hammerAngle :: Types.GameState -> GHC.Types.Float
+  RecSel Left Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLLLLLLLLL),1*U(A,A,1*U(U),A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.GameState) ->
+                 case ds of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds3 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  heart :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLSLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds17 }) -}
+4b258a32ea66243b92437ea70cfe13af
+  lives :: Types.GameState -> GHC.Types.Int
+  RecSel Left Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLSLLLL),1*U(A,A,A,A,A,A,A,1*U(U),A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.GameState) ->
+                 case ds of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds8 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  noodleMunchinNarutos :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLS),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U))>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds31 }) -}
+4b258a32ea66243b92437ea70cfe13af
+  player :: Types.GameState -> Types.Player
+  RecSel Left Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLLLLLLLLL),1*U(1*U(U,U,U,U,U,U),A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.GameState) ->
+                 case ds of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds1 }) -}
+3860cdc8ce3a18e2c97d80b31e2bdf29
+  playerAction :: Types.Player -> Types.Action
+  RecSel Left Types.Player
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSL),1*U(A,A,A,A,1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Player) ->
+                 case ds of wild { Types.Player ds1 ds2 ds3 ds4 ds5 ds6 -> ds5 }) -}
+3860cdc8ce3a18e2c97d80b31e2bdf29
+  playerFacing :: Types.Player -> Types.Direction
+  RecSel Left Types.Player
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLLL),1*U(A,A,1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Player) ->
+                 case ds of wild { Types.Player ds1 ds2 ds3 ds4 ds5 ds6 -> ds3 }) -}
+3860cdc8ce3a18e2c97d80b31e2bdf29
+  playerPos :: Types.Player -> Types.Position
+  RecSel Left Types.Player
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLLL),1*U(1*U(U,U),A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Player) ->
+                 case ds of wild { Types.Player ds1 ds2 ds3 ds4 ds5 ds6 -> ds1 }) -}
+3860cdc8ce3a18e2c97d80b31e2bdf29
+  playerVel :: Types.Player -> GHC.Types.Float
+  RecSel Left Types.Player
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLLL),1*U(A,1*U(U),A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Player) ->
+                 case ds of wild { Types.Player ds1 ds2 ds3 ds4 ds5 ds6 -> ds2 }) -}
+4b258a32ea66243b92437ea70cfe13af
+  points :: Types.GameState -> GHC.Types.Int
+  RecSel Left Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLSLLLLL),1*U(A,A,A,A,A,A,1*U(U),A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.GameState) ->
+                 case ds of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds7 }) -}
+3860cdc8ce3a18e2c97d80b31e2bdf29
+  pressedKeys :: Types.Player -> [Graphics.UI.GLFW.Types.Key]
+  RecSel Left Types.Player
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSLL),1*U(A,A,A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Player) ->
+                 case ds of wild { Types.Player ds1 ds2 ds3 ds4 ds5 ds6 -> ds4 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  shittyShimadas :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLLLLLLLLSL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds30 }) -}
+0d0772e8efebb462dcd67887b31ea04a
+  sound1 :: Types.Sounds -> GHC.Base.String
+  RecSel Left Types.Sounds
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sounds) ->
+                 case ds of wild { Types.Sounds ds1 ds2 -> ds1 }) -}
+0d0772e8efebb462dcd67887b31ea04a
+  sound2 :: Types.Sounds -> GHC.Base.String
+  RecSel Left Types.Sounds
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sounds) ->
+                 case ds of wild { Types.Sounds ds1 ds2 -> ds2 }) -}
+4b258a32ea66243b92437ea70cfe13af
+  soundQueue :: Types.GameState -> [Types.Sound]
+  RecSel Left Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLS),1*U(A,A,A,A,A,A,A,A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.GameState) ->
+                 case ds of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds12 }) -}
+4b258a32ea66243b92437ea70cfe13af
+  swingCooldown :: Types.GameState -> GHC.Types.Float
+  RecSel Left Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSLLLLLLL),1*U(A,A,A,A,1*U(U),A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.GameState) ->
+                 case ds of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds5 }) -}
+4b258a32ea66243b92437ea70cfe13af
+  swingDirection ::
+    Types.GameState -> GHC.Base.Maybe Types.SwingDirection
+  RecSel Left Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSLLLLLLLL),1*U(A,A,A,1*U,A,A,A,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.GameState) ->
+                 case ds of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds4 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  torbFallLeft :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLSLLLLLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds8 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  torbFallRight :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLSLLLLLLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds7 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  torbHammerLeft :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSLLLLLLLLLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds4 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  torbHammerRight :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLLLLLLLLLLLLLLLLLLLLLLLLLLLL),1*U(A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds3 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  torbRunLeft :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLSLLLLLLLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds6 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  torbRunRight :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLSLLLLLLLLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds5 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  torbStillLeft :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLLLLLLLLLLLLLLLLLLLLLLLLLLLL),1*U(A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds2 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  torbStillRight :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL),1*U(1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds1 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  weakWeebs :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLLLLLLLLLLLLLSLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds28 }) -}
+70757ca2726e50931866d5492951c3eb
+  weebAction :: Types.Weeb -> Types.WeebAction
+  RecSel Left Types.Weeb
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLSLL),1*U(A,A,1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Weeb) ->
+                 case ds of wild { Types.Weeb ds1 ds2 ds3 ds4 ds5 -> ds3 }) -}
+70757ca2726e50931866d5492951c3eb
+  weebAlive :: Types.Weeb -> GHC.Types.Float
+  RecSel Left Types.Weeb
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLS),1*U(A,A,A,A,1*U(U))>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Weeb) ->
+                 case ds of wild { Types.Weeb ds1 ds2 ds3 ds4 ds5 -> ds5 }) -}
+70757ca2726e50931866d5492951c3eb
+  weebAnimation :: Types.Weeb -> (Types.WeebAction, Types.Animation)
+  RecSel Left Types.Weeb
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLL),1*U(A,1*U(U,U),A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Weeb) ->
+                 case ds of wild { Types.Weeb ds1 ds2 ds3 ds4 ds5 -> ds2 }) -}
+4b258a32ea66243b92437ea70cfe13af
+  weebCooldown :: Types.GameState -> GHC.Types.Float
+  RecSel Left Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLSLLLLLL),1*U(A,A,A,A,A,1*U(U),A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.GameState) ->
+                 case ds of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds6 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  weebDabLeft :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLSLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds12 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  weebDabRight :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLSLLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds11 }) -}
+70757ca2726e50931866d5492951c3eb
+  weebDead :: Types.Weeb -> GHC.Types.Float
+  RecSel Left Types.Weeb
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSL),1*U(A,A,A,1*U(U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Weeb) ->
+                 case ds of wild { Types.Weeb ds1 ds2 ds3 ds4 ds5 -> ds4 }) -}
+70757ca2726e50931866d5492951c3eb
+  weebPos :: Types.Weeb -> Types.Position
+  RecSel Left Types.Weeb
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLL),1*U(1*U(U,U),A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Weeb) ->
+                 case ds of wild { Types.Weeb ds1 ds2 ds3 ds4 ds5 -> ds1 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  weebSmackedLeft1 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLSLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds14 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  weebSmackedLeft2 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLLSLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds16 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  weebSmackedRight1 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLSLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds13 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  weebSmackedRight2 :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLLLLLLSLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds15 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  weebStillLeft :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLLSLLLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds10 }) -}
+47a9f17b7173d851a6d4f4f2e7a93020
+  weebStillRight :: Types.Sprites -> Types.Sprite
+  RecSel Left Types.Sprites
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLLLLSLLLLLLLLLLLLLLLLLLLLLL),1*U(A,A,A,A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Sprites) ->
+                 case ds of wild { Types.Sprites ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ds15 ds16 ds17 ds18 ds19 ds20 ds21 ds22 ds23 ds24 ds25 ds26 ds27 ds28 ds29 ds30 ds31 ->
+                 ds9 }) -}
+4b258a32ea66243b92437ea70cfe13af
+  weebs :: Types.GameState -> [Types.Weeb]
+  RecSel Left Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LSLLLLLLLLLL),1*U(A,1*U,A,A,A,A,A,A,A,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.GameState) ->
+                 case ds of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 ds2 }) -}
+instance GHC.Classes.Eq [Types.Action] = Types.$fEqAction
+instance GHC.Classes.Eq [Types.Direction] = Types.$fEqDirection
+instance GHC.Classes.Eq [Types.SwingDirection]
+  = Types.$fEqSwingDirection
+instance GHC.Classes.Eq [Types.WeebAction] = Types.$fEqWeebAction
+instance GHC.Show.Show [Types.Weeb] = Types.$fShowWeeb
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

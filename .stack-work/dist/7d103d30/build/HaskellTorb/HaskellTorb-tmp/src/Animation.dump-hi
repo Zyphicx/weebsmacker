@@ -1,0 +1,493 @@
+
+==================== FINAL INTERFACE ====================
+2018-08-03 18:59:36.6817766 UTC
+
+interface main:Animation 8043
+  interface hash: 01cda066b907a1a732c8c5c98238ec87
+  ABI hash: a0589f07b40fc2c8a775945ce88f6ae7
+  export-list hash: 6543d9d5ebec830fa338b6781dc8a9be
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 05a7dfc725707cda3dfdbf87b0f28b5d
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Animation.getPlayerAnimation
+  Animation.getWeebAnimation
+  Animation.torbFallLeftAnimation
+  Animation.torbFallRightAnimation
+  Animation.torbRunLeftAnimation
+  Animation.torbRunRightAnimation
+  Animation.updateAnimationStages
+  Animation.updatePlayerAnimation
+  Animation.updateWeebAnimation
+  Animation.updateWeebAnimations
+  Animation.weebDabAnimation
+  Animation.weebDeathAnimation
+module dependencies: Types
+package dependencies: GLFW-b-3.2.1.0 GLURaw-2.0.0.4 GLUT-2.7.0.13
+                      ObjectName-1.1.0.1 OpenGL-3.0.2.1 OpenGLRaw-3.3.0.2
+                      StateVar-1.1.1.0 Win32-2.6.1.0 array-0.5.2.0 base-4.11.1.0
+                      binary-0.8.5.1 bindings-GLFW-3.2.1.1 bmp-1.2.6.3
+                      bytestring-0.10.8.2 containers-0.5.11.0 deepseq-1.4.3.0
+                      fixed-0.2.1.1 ghc-boot-th-8.4.3 ghc-prim-0.5.2.0 gloss-1.12.0.0
+                      gloss-rendering-1.12.0.0 half-0.3 integer-gmp-1.0.2.0
+                      pretty-1.1.3.6 stm-2.4.5.0 template-haskell-2.13.0.0 text-1.2.3.0
+                      time-1.8.0.2
+orphans: time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian
+         stm-2.4.5.0:Control.Monad.STM text-1.2.3.0:Data.Text
+         binary-0.8.5.1:Data.Binary.Generic text-1.2.3.0:Data.Text.Show
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         GLFW-b-3.2.1.0:Graphics.UI.GLFW.Types base-4.11.1.0:GHC.Float
+         base-4.11.1.0:GHC.Base
+family instance modules: GLFW-b-3.2.1.0:Graphics.UI.GLFW.Types
+                         base-4.11.1.0:Control.Applicative base-4.11.1.0:Data.Complex
+                         base-4.11.1.0:Data.Functor.Compose base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         containers-0.5.11.0:Data.IntMap.Internal
+                         containers-0.5.11.0:Data.IntSet.Internal
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Sequence.Internal
+                         containers-0.5.11.0:Data.Set.Internal containers-0.5.11.0:Data.Tree
+                         ghc-boot-th-8.4.3:GHC.ForeignSrcLang.Type
+                         ghc-boot-th-8.4.3:GHC.LanguageExtensions.Type half-0.3:Numeric.Half
+                         pretty-1.1.3.6:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.6:Text.PrettyPrint.HughesPJ
+                         template-haskell-2.13.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.3.0:Data.Text
+import  -/  base-4.11.1.0:Data.Foldable 6cf3e918f22d03c0870804f05cd183d1
+import  -/  base-4.11.1.0:Data.Tuple bfd15ca14ee9b1b9cd782c618946afb4
+import  -/  base-4.11.1.0:GHC.Base b7dd14d8fe8d606dde5678ea6b0575e9
+import  -/  base-4.11.1.0:GHC.Num 5de8df0185e7e8d8ec29b3c61e2c8606
+import  -/  base-4.11.1.0:GHC.Real 032ed0a1053f878238d78e95e75f2edf
+import  -/  base-4.11.1.0:Prelude aca391812f777207b15d62bb5b9feb63
+import  -/  ghc-prim-0.5.2.0:GHC.Classes f7d67fd97d5a20e9252c9597d1aa387b
+import  -/  ghc-prim-0.5.2.0:GHC.Types d9b3023de7feae4a5308d643da5543f7
+import  -/  Types 86017bc6ec9258d54a2cd0a7197d3a23
+  exports: cdab6bcc0f25b78227451b5170314fa3
+  Action 5a2d35b3ff6b0ed758de4a1919c4a683
+  Animation 0690d0591eba0306c5f32cae73fc8df3
+  Dead 2968a2da35f480f29cd886c13234fbfa
+  Falling 619681807eacf04e928f1106bed9fb23
+  GameState 4b258a32ea66243b92437ea70cfe13af
+  Left 17e26f6d5a819f27499ac1bb0cc50ed2
+  Normal 75ca1702131f69c51d4c32ca05d1bf4d
+  Right 063d8a9f293b2a1f3101c191e7e8d893
+  Running 9a2da9b7b7feb1b4117b6f178b8c090f
+  Sprites 47a9f17b7173d851a6d4f4f2e7a93020
+  Still 5033b4c73e618e49a26d0883046f95eb
+  Weeb 10967d5f016769bc8650f1b639037bd1
+  Weeb 70757ca2726e50931866d5492951c3eb
+  WeebAction 81ef1563532d42b133704282a8ccf89b
+  animation 3860cdc8ce3a18e2c97d80b31e2bdf29
+  player 4b258a32ea66243b92437ea70cfe13af
+  playerAction 3860cdc8ce3a18e2c97d80b31e2bdf29
+  torbFallLeft 47a9f17b7173d851a6d4f4f2e7a93020
+  torbFallRight 47a9f17b7173d851a6d4f4f2e7a93020
+  torbRunLeft 47a9f17b7173d851a6d4f4f2e7a93020
+  torbRunRight 47a9f17b7173d851a6d4f4f2e7a93020
+  torbStillLeft 47a9f17b7173d851a6d4f4f2e7a93020
+  torbStillRight 47a9f17b7173d851a6d4f4f2e7a93020
+  weebDabLeft 47a9f17b7173d851a6d4f4f2e7a93020
+  weebSmackedLeft1 47a9f17b7173d851a6d4f4f2e7a93020
+  weebSmackedLeft2 47a9f17b7173d851a6d4f4f2e7a93020
+  weebStillLeft 47a9f17b7173d851a6d4f4f2e7a93020
+  weebs 4b258a32ea66243b92437ea70cfe13af
+import  -/  time-1.8.0.2:Data.Time.Clock 76440c4737e8185bc6b1842c7242fac7
+import  -/  time-1.8.0.2:Data.Time.Clock.Internal.NominalDiffTime 4fbecbab02a5f9e6a8299a15b23e2e5f
+15260ac57b165f486ccd31f9caec775b
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Animation.$trModule3
+                   Animation.$trModule1) -}
+653a44490ac94f2146876040afa84988
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Animation.$trModule2) -}
+df894434dd13f44531a1ccf58aae71d5
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Animation"#) -}
+832b889cedefdda6c98d075a4f555a0c
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Animation.$trModule4) -}
+34bc6c84f013c648fdd040e639d6f149
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+141576ed23709ac9615bc0a1f6913a66
+  $wupdateWeebAnimation ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.Sprites
+    -> Types.Position
+    -> (Types.WeebAction, Types.Animation)
+    -> Types.WeebAction
+    -> GHC.Types.Float
+    -> GHC.Types.Float
+    -> (# Types.Position, (Types.WeebAction, Types.Animation),
+          Types.WeebAction, GHC.Types.Float, GHC.Types.Float #)
+  {- Arity: 7,
+     Strictness: <L,1*U><L,U(A,A,A,A,A,A,A,A,A,U(U,U),A,U(U,U),A,U(U,U),A,U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)><L,U><L,1*U(U,1*U)><L,U><L,U><L,U>,
+     Inline: [0],
+     Unfolding: (\ (w :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (w1 :: Types.Sprites)
+                   (ww :: Types.Position)
+                   (ww1 :: (Types.WeebAction, Types.Animation))
+                   (ww2 :: Types.WeebAction)
+                   (ww3 :: GHC.Types.Float)
+                   (ww4 :: GHC.Types.Float) ->
+                 (# ww,
+                    case ww1 of wild { (,) ds1 y ->
+                    case y of wild1 {
+                      [] -> (ww2, Animation.getWeebAnimation w1 ww2)
+                      : ds2 ds3
+                      -> let {
+                           $j :: (Types.WeebAction, Types.Animation)
+                             <join 0> {- Strictness: m -}
+                           = case ds2 of wild2 { (,) sprite duration ->
+                             case duration of wild3 { GHC.Types.F# x ->
+                             case GHC.Real.$w$s$c/
+                                    w `cast`
+                                    (Data.Time.Clock.Internal.NominalDiffTime.N:NominalDiffTime[0] ; Data.Fixed.N:Fixed[0]
+                                                                                                         <Data.Fixed.E12>_P)
+                                    GHC.Real.$fEnumRatio1
+                                    Data.Fixed.$fHasResolutionE5
+                                    GHC.Real.$fEnumRatio1 of ww5 { (#,#) ww6 ww7 ->
+                             case GHC.Float.rationalToFloat
+                                    ww6
+                                    ww7 of wild4 { GHC.Types.F# y1 ->
+                             let {
+                               x1 :: GHC.Prim.Float# = GHC.Prim.minusFloat# x y1
+                             } in
+                             case GHC.Prim.gtFloat# x1 0.0# of lwild {
+                               DEFAULT
+                               -> case ds3 of wild5 {
+                                    [] -> (ds1, Animation.getWeebAnimation w1 ds1)
+                                    : ipv ipv1 -> (ds1, wild5) }
+                               1#
+                               -> (ds1,
+                                   GHC.Types.:
+                                     @ (Types.Sprite, GHC.Types.Float)
+                                     (sprite, GHC.Types.F# x1)
+                                     ds3) } } } } }
+                         } in
+                         case ds1 of wild2 {
+                           Types.Normal
+                           -> case ww2 of wild3 {
+                                Types.Normal -> $j
+                                Types.Dead -> (Types.Dead, Animation.weebDeathAnimation w1) }
+                           Types.Dead
+                           -> case ww2 of wild3 {
+                                Types.Normal -> (Types.Normal, Animation.weebDabAnimation w1)
+                                Types.Dead -> $j } } } },
+                    ww2, ww3, ww4 #)) -}
+1f6dea87e5c754735ec19a41e65b1a36
+  getPlayerAnimation ::
+    Types.Sprites -> Types.Action -> Types.Animation
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(U(U,U),U(U,U),A,A,U(U,U),U(U,U),U(U,U),U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)><S,1*U>,
+     Unfolding: (\ (sprites :: Types.Sprites) (ds :: Types.Action) ->
+                 case ds of wild {
+                   Types.Running ds1
+                   -> case ds1 of wild1 {
+                        Types.Left -> Animation.torbRunLeftAnimation sprites
+                        Types.Right -> Animation.torbRunRightAnimation sprites }
+                   Types.Still ipv -> GHC.Types.[] @ Types.Frame
+                   Types.Falling ds1
+                   -> case ds1 of wild1 {
+                        Types.Left -> Animation.torbFallLeftAnimation sprites
+                        Types.Right -> Animation.torbFallRightAnimation sprites } }) -}
+a3fff16ebf053780d6012422412451be
+  getWeebAnimation ::
+    Types.Sprites -> Types.WeebAction -> Types.Animation
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,U(A,A,A,A,A,A,A,A,A,U(U,U),A,U(U,U),A,U(U,U),A,U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)><S,1*U>m2,
+     Unfolding: InlineRule (2, True, False)
+                (\ (sprites :: Types.Sprites) (ds :: Types.WeebAction) ->
+                 case ds of wild {
+                   Types.Normal -> Animation.weebDabAnimation sprites
+                   Types.Dead -> Animation.weebDeathAnimation sprites }) -}
+b94336c7ea3687e4a01aa787017e60af
+  torbFallLeftAnimation :: Types.Sprites -> Types.Animation
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <L,U(A,1*U(U,U),A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s :: Types.Sprites) ->
+                 GHC.Types.:
+                   @ Types.Frame
+                   (Types.torbFallLeft s, Animation.torbFallRightAnimation1)
+                   (GHC.Types.:
+                      @ Types.Frame
+                      (Types.torbStillLeft s, Animation.torbFallRightAnimation1)
+                      (GHC.Types.[] @ Types.Frame))) -}
+7d1e17d66f38030612559126c3828d11
+  torbFallRightAnimation :: Types.Sprites -> Types.Animation
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <L,U(1*U(U,U),A,A,A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s :: Types.Sprites) ->
+                 GHC.Types.:
+                   @ Types.Frame
+                   (Types.torbFallRight s, Animation.torbFallRightAnimation1)
+                   (GHC.Types.:
+                      @ Types.Frame
+                      (Types.torbStillRight s, Animation.torbFallRightAnimation1)
+                      (GHC.Types.[] @ Types.Frame))) -}
+52fac9c9a96f6fcf44508a3258253264
+  torbFallRightAnimation1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.2#) -}
+19d32ddf3ac199b4d6bc237e99148b1d
+  torbRunLeftAnimation :: Types.Sprites -> Types.Animation
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <L,U(A,1*U(U,U),A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s :: Types.Sprites) ->
+                 GHC.Types.:
+                   @ Types.Frame
+                   (Types.torbRunLeft s, Animation.torbFallRightAnimation1)
+                   (GHC.Types.:
+                      @ Types.Frame
+                      (Types.torbStillLeft s, Animation.torbFallRightAnimation1)
+                      (GHC.Types.[] @ Types.Frame))) -}
+f5714bbac2f8381797a587c8d99a818d
+  torbRunRightAnimation :: Types.Sprites -> Types.Animation
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <L,U(1*U(U,U),A,A,A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s :: Types.Sprites) ->
+                 GHC.Types.:
+                   @ Types.Frame
+                   (Types.torbRunRight s, Animation.torbFallRightAnimation1)
+                   (GHC.Types.:
+                      @ Types.Frame
+                      (Types.torbStillRight s, Animation.torbFallRightAnimation1)
+                      (GHC.Types.[] @ Types.Frame))) -}
+e444bb62d9988af51016677dbc3b209d
+  updateAnimationStages ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.Sprites -> Types.GameState -> GHC.Types.IO Types.GameState
+  {- Arity: 4,
+     Strictness: <L,U><L,U(U(U,U),U(U,U),A,A,U(U,U),U(U,U),U(U,U),U(U,U),A,U(U,U),A,U(U,U),A,U(U,U),A,U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)><L,1*U(1*U(U,U,U,U,U,1*U(U,1*U)),U,U,U,U,U,U,U,U,U,U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Animation.updateAnimationStages1
+                  `cast`
+                (<Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime>_R
+                 ->_R <Types.Sprites>_R
+                 ->_R <Types.GameState>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <Types.GameState>_R)) -}
+7f3b5eb32fdb96358a242f6a38605284
+  updateAnimationStages1 ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.Sprites
+    -> Types.GameState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Types.GameState #)
+  {- Arity: 4,
+     Strictness: <L,U><L,U(U(U,U),U(U,U),A,A,U(U,U),U(U,U),U(U,U),U(U,U),A,U(U,U),A,U(U,U),A,U(U,U),A,U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)><L,1*U(1*U(U,U,U,U,U,1*U(U,1*U)),U,U,U,U,U,U,U,U,U,U,U)><S,U>,
+     Unfolding: (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (sprites :: Types.Sprites)
+                   (state :: Types.GameState)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 (# s,
+                    case Animation.updatePlayerAnimation
+                           timeDiff
+                           sprites
+                           state of wild { Types.GameState ds ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ->
+                    Types.GameState
+                      ds
+                      (GHC.Base.map
+                         @ Types.Weeb
+                         @ Types.Weeb
+                         (Animation.updateWeebAnimation timeDiff sprites)
+                         ds1)
+                      ds2
+                      ds3
+                      ds4
+                      ds5
+                      ds6
+                      ds7
+                      ds8
+                      ds9
+                      ds10
+                      ds11 } #)) -}
+ba15d3bf7a2473cd959e3daf635aa180
+  updatePlayerAnimation ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.Sprites -> Types.GameState -> Types.GameState
+  {- Arity: 3,
+     Strictness: <L,1*U><L,U(U(U,U),U(U,U),A,A,U(U,U),U(U,U),U(U,U),U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)><S,1*U(1*U(U,U,U,U,U,1*U(U,1*U)),U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (sprites :: Types.Sprites)
+                   (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ->
+                 Types.GameState
+                   (case ds of wild1 { Types.Player ds12 ds13 ds14 ds15 ds16 ds17 ->
+                    Types.Player
+                      ds12
+                      ds13
+                      ds14
+                      ds15
+                      ds16
+                      (case ds17 of wild2 { (,) x ds18 ->
+                       case Types.$fEqAction_$c== ds16 x of wild3 {
+                         GHC.Types.False
+                         -> (ds16, Animation.getPlayerAnimation sprites ds16)
+                         GHC.Types.True
+                         -> case ds18 of wild4 {
+                              [] -> Animation.updatePlayerAnimation1
+                              : ds19 xs
+                              -> case ds19 of wild5 { (,) sprite duration ->
+                                 case duration of wild6 { GHC.Types.F# x1 ->
+                                 case GHC.Real.$w$s$c/
+                                        timeDiff
+                                          `cast`
+                                        (Data.Time.Clock.Internal.NominalDiffTime.N:NominalDiffTime[0] ; Data.Fixed.N:Fixed[0]
+                                                                                                             <Data.Fixed.E12>_P)
+                                        GHC.Real.$fEnumRatio1
+                                        Data.Fixed.$fHasResolutionE5
+                                        GHC.Real.$fEnumRatio1 of ww { (#,#) ww1 ww2 ->
+                                 case GHC.Float.rationalToFloat ww1 ww2 of wild7 { GHC.Types.F# y ->
+                                 let {
+                                   x2 :: GHC.Prim.Float# = GHC.Prim.minusFloat# x1 y
+                                 } in
+                                 case GHC.Prim.gtFloat# x2 0.0# of lwild {
+                                   DEFAULT
+                                   -> case xs of wild8 {
+                                        [] -> (x, Animation.getPlayerAnimation sprites x)
+                                        : ipv ipv1 -> (x, wild8) }
+                                   1#
+                                   -> (x,
+                                       GHC.Types.:
+                                         @ (Types.Sprite, GHC.Types.Float)
+                                         (sprite, GHC.Types.F# x2)
+                                         xs) } } } } } } } }) })
+                   ds1
+                   ds2
+                   ds3
+                   ds4
+                   ds5
+                   ds6
+                   ds7
+                   ds8
+                   ds9
+                   ds10
+                   ds11 }) -}
+4f56c5eaae9a4b38bb44e5cb9c1ff54a
+  updatePlayerAnimation1 :: (Types.Action, [Types.Frame])
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Animation.updatePlayerAnimation2,
+                  GHC.Types.[] @ Types.Frame)) -}
+d8542032f8f05b90026cb0ca8927bfdd
+  updatePlayerAnimation2 :: Types.Action
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (Types.Still Types.Left) -}
+bf933fa7c1b2a6336b2401e792b62713
+  updateWeebAnimation ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.Sprites -> Types.Weeb -> Types.Weeb
+  {- Arity: 3,
+     Strictness: <L,1*U><L,U(A,A,A,A,A,A,A,A,A,U(U,U),A,U(U,U),A,U(U,U),A,U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)><S,1*U(U,1*U(U,1*U),U,U,U)>m,
+     Inline: [0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (w1 :: Types.Sprites)
+                   (w2 :: Types.Weeb) ->
+                 case w2 of ww { Types.Weeb ww1 ww2 ww3 ww4 ww5 ->
+                 case Animation.$wupdateWeebAnimation
+                        w
+                        w1
+                        ww1
+                        ww2
+                        ww3
+                        ww4
+                        ww5 of ww6 { (#,,,,#) ww7 ww8 ww9 ww10 ww11 ->
+                 Types.Weeb ww7 ww8 ww9 ww10 ww11 } }) -}
+642d48e97234155251b8ae28801787d1
+  updateWeebAnimations ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.Sprites -> Types.GameState -> Types.GameState
+  {- Arity: 3,
+     Strictness: <L,U><L,U(A,A,A,A,A,A,A,A,A,U(U,U),A,U(U,U),A,U(U,U),A,U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)><S,1*U(U,1*U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (sprites :: Types.Sprites)
+                   (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ->
+                 Types.GameState
+                   ds
+                   (GHC.Base.build
+                      @ Types.Weeb
+                      (\ @ b1
+                         (c :: Types.Weeb -> b1 -> b1)[OneShot]
+                         (n :: b1)[OneShot] ->
+                       GHC.Base.foldr
+                         @ Types.Weeb
+                         @ b1
+                         (GHC.Base.mapFB
+                            @ Types.Weeb
+                            @ b1
+                            @ Types.Weeb
+                            c
+                            (Animation.updateWeebAnimation timeDiff sprites))
+                         n
+                         ds1))
+                   ds2
+                   ds3
+                   ds4
+                   ds5
+                   ds6
+                   ds7
+                   ds8
+                   ds9
+                   ds10
+                   ds11 }) -}
+a387b1de437def7c1f996d5d829cb6c3
+  weebDabAnimation :: Types.Sprites -> Types.Animation
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <L,U(A,A,A,A,A,A,A,A,A,1*U(U,U),A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s :: Types.Sprites) ->
+                 GHC.Types.:
+                   @ Types.Frame
+                   (Types.weebStillLeft s, Animation.weebDabAnimation1)
+                   (GHC.Types.:
+                      @ Types.Frame
+                      (Types.weebDabLeft s, Animation.torbFallRightAnimation1)
+                      (GHC.Types.[] @ Types.Frame))) -}
+6e2d2816e5f223b1e6970a3e2c43ffa7
+  weebDabAnimation1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 2.0#) -}
+3961d3826cafe8b6017ae2c08e59b407
+  weebDeathAnimation :: Types.Sprites -> Types.Animation
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <L,U(A,A,A,A,A,A,A,A,A,A,A,A,A,1*U(U,U),A,1*U(U,U),A,A,A,A,A,A,A,A,A,A,A,A,A,A,A)>m2,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s :: Types.Sprites) ->
+                 GHC.Types.:
+                   @ Types.Frame
+                   (Types.weebSmackedLeft1 s, Animation.weebDeathAnimation1)
+                   (GHC.Types.:
+                      @ Types.Frame
+                      (Types.weebSmackedLeft2 s, Animation.weebDeathAnimation1)
+                      (GHC.Types.[] @ Types.Frame))) -}
+663981101ebbdfa3a9e2e6caeaf060ee
+  weebDeathAnimation1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.3#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

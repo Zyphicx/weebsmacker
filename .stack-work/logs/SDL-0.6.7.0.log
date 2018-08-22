@@ -1,0 +1,12 @@
+[1 of 2] Compiling Main             ( C:\Users\Aztro\AppData\Local\Temp\stack34420\SDL-0.6.7.0\Setup.lhs, C:\Users\Aztro\AppData\Local\Temp\stack34420\SDL-0.6.7.0\.stack-work\dist\7d103d30\setup\Main.o )
+[2 of 2] Compiling StackSetupShim   ( C:\sr\setup-exe-src\setup-shim-Z6RU0evB.hs, C:\Users\Aztro\AppData\Local\Temp\stack34420\SDL-0.6.7.0\.stack-work\dist\7d103d30\setup\StackSetupShim.o )
+Linking C:\Users\Aztro\AppData\Local\Temp\stack34420\SDL-0.6.7.0\.stack-work\dist\7d103d30\setup\setup.exe ...
+Configuring SDL-0.6.7.0...
+configure: WARNING: unrecognized options: --with-compiler
+configure: loading site script /usr/local/etc/config.site
+checking for sdl-config... no
+checking for sdl11-config... no
+configure: error: *** SDL not found! Get SDL from www.libsdl.org.
+If you already installed it, check it's in the path. If problem remains,
+please send a mail to the address that appears in ./configure --version
+indicating your platform, the version of configure script and the problem.

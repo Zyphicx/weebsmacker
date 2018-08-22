@@ -1,0 +1,398 @@
+
+==================== FINAL INTERFACE ====================
+2018-08-03 19:27:31.0835127 UTC
+
+interface main:Backend 8043
+  interface hash: 51a0d59ba20b71935bc63ebe68c67d8c
+  ABI hash: 9488b82f69ddb635cddf7fc16c1247f6
+  export-list hash: a8f6cdf08c5ac5ce5631fb25b8df8421
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 05a7dfc725707cda3dfdbf87b0f28b5d
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Backend.exitPressed
+  Backend.handleEvents
+  Backend.isPress
+  Backend.loadAssets
+  Backend.loadSounds
+  Backend.loadSprites
+  Backend.withWindow
+module dependencies: Constants Types
+package dependencies: GLFW-b-3.2.1.0 GLURaw-2.0.0.4 GLUT-2.7.0.13
+                      ObjectName-1.1.0.1 OpenGL-3.0.2.1 OpenGLRaw-3.3.0.2
+                      StateVar-1.1.1.0 array-0.5.2.0 base-4.11.1.0 binary-0.8.5.1
+                      bindings-GLFW-3.2.1.1 bmp-1.2.6.3 bytestring-0.10.8.2
+                      containers-0.5.11.0 deepseq-1.4.3.0 fixed-0.2.1.1 ghc-boot-th-8.4.3
+                      ghc-prim-0.5.2.0 gloss-1.12.0.0 gloss-rendering-1.12.0.0 half-0.3
+                      integer-gmp-1.0.2.0 pretty-1.1.3.6 stm-2.4.5.0
+                      template-haskell-2.13.0.0 text-1.2.3.0
+orphans: stm-2.4.5.0:Control.Monad.STM text-1.2.3.0:Data.Text
+         binary-0.8.5.1:Data.Binary.Generic text-1.2.3.0:Data.Text.Show
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         GLFW-b-3.2.1.0:Graphics.UI.GLFW.Types base-4.11.1.0:GHC.Float
+         base-4.11.1.0:GHC.Base
+family instance modules: GLFW-b-3.2.1.0:Graphics.UI.GLFW.Types
+                         base-4.11.1.0:Control.Applicative base-4.11.1.0:Data.Complex
+                         base-4.11.1.0:Data.Functor.Compose base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         containers-0.5.11.0:Data.IntMap.Internal
+                         containers-0.5.11.0:Data.IntSet.Internal
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Sequence.Internal
+                         containers-0.5.11.0:Data.Set.Internal containers-0.5.11.0:Data.Tree
+                         ghc-boot-th-8.4.3:GHC.ForeignSrcLang.Type
+                         ghc-boot-th-8.4.3:GHC.LanguageExtensions.Type half-0.3:Numeric.Half
+                         pretty-1.1.3.6:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.6:Text.PrettyPrint.HughesPJ
+                         template-haskell-2.13.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.3.0:Data.Text
+import  -/  GLFW-b-3.2.1.0:Graphics.UI.GLFW 86f3667524073c1d9547e4e903e843d3
+import  -/  GLFW-b-3.2.1.0:Graphics.UI.GLFW.Types 9cda662418961203831abeb5efb31d4a
+import  -/  base-4.11.1.0:Control.Monad 60c7bc648329161549cea9b9658c9b81
+import  -/  base-4.11.1.0:Data.Functor 920435f8ff93fffe1aec86c79e4fd45f
+import  -/  base-4.11.1.0:Data.OldList 3987872d5de68d40c22cd1c30825ad08
+import  -/  base-4.11.1.0:Data.Traversable 6506d675f7e45edd6c22add801f79ba8
+import  -/  base-4.11.1.0:GHC.Base b7dd14d8fe8d606dde5678ea6b0575e9
+import  -/  base-4.11.1.0:GHC.Show 6211aec7cccd267a5ee999e4414d7b90
+import  -/  base-4.11.1.0:Prelude aca391812f777207b15d62bb5b9feb63
+import  -/  base-4.11.1.0:System.IO 7331ec6891ba7763ad75720258619382
+import  -/  ghc-prim-0.5.2.0:GHC.Types d9b3023de7feae4a5308d643da5543f7
+import  -/  gloss-rendering-1.12.0.0:Graphics.Gloss.Internals.Data.Picture ecb1ccb6474f00909fc4dc64349e5f2c
+import  -/  gloss-rendering-1.12.0.0:Graphics.Gloss.Rendering 026d7bd046eb98a4722e052bf570e078
+import  -/  Constants 916c21825e88169b843e7af4cf9b1bda
+  exports: 65df7f5b0b18332b03cc258368944848
+  difficultyHeight ab06a36b087cf8adae7e9664f3b4b31c
+  digitHeight d9ce2918c8dd54e794170b71d16cff1c
+  digitWidth 7e923cfd6d0e815aa5ccae2c22bb3800
+  heartHeight d321d4f41f0c02e23f106f54b2995fdb
+  heartWidth 2a59a1c83b70fce9ab1f1305aa4e444d
+  torbSpriteHeight 4bf137c23dc1cae4c53dcce94dbca3ba
+  torbSpriteWidth c6caa0b1747d1208929fbf74834ebc9b
+  weebSpriteHeight 7bf90198fbef623fadc7f5974af4874a
+  weebSpriteWidth de166d908bce89c76ec9f43a31cef48e
+import  -/  Types 86017bc6ec9258d54a2cd0a7197d3a23
+  exports: cdab6bcc0f25b78227451b5170314fa3
+  GameState 4b258a32ea66243b92437ea70cfe13af
+  Sounds c325b6ccc0b4a5aa3c73c9264c5ad043
+  Sounds 0d0772e8efebb462dcd67887b31ea04a
+  Sprite 5e801e70a2b188833d6ae57f75783970
+  Sprites a3d7dcd508509b38bd1dc68f74b84fb1
+  Sprites 47a9f17b7173d851a6d4f4f2e7a93020
+  player 4b258a32ea66243b92437ea70cfe13af
+  pressedKeys 3860cdc8ce3a18e2c97d80b31e2bdf29
+69a37330f5dc75e4fc449a82808cce0d
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Backend.$trModule3
+                   Backend.$trModule1) -}
+99d4cddda5f4789584364e2507476773
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Backend.$trModule2) -}
+54c901c07a0db1942108565d13677f6c
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Backend"#) -}
+e00ea729d5029a4b47236decc2f2a070
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Backend.$trModule4) -}
+0fb083747a46a0584a6aa070042569ee
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+40256e61165618fbf3aef3fcd922ce70
+  $wexitPressed ::
+    GHC.Prim.Addr#
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Types.Bool #)
+  {- Arity: 2, Strictness: <S,U><S,U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Addr#)
+                   (w :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Backend.exitPressed2 of v { GHC.Types.I# v1 ->
+                 case {__pkg_ccall_GC bindings-GLFW-3.2.1.1 GHC.Prim.Addr#
+                                                            -> GHC.Prim.Int#
+                                                            -> GHC.Prim.State# GHC.Prim.RealWorld
+                                                            -> (# GHC.Prim.State#
+                                                                    GHC.Prim.RealWorld,
+                                                                  GHC.Prim.Int# #)}
+                        ww
+                        v1
+                        w of wild { (#,#) ds7 ds8 ->
+                 (# ds7,
+                    case GHC.Prim.narrow32Int# ds8 of wild1 {
+                      DEFAULT
+                      -> case Graphics.UI.GLFW.C.$wlvl11 wild1
+                         ret_ty GHC.Types.Bool
+                         of {}
+                      0# -> GHC.Types.False
+                      1# -> GHC.Types.True
+                      2# -> GHC.Types.False } #) } }) -}
+f162561b8d9cfc6915110ed6f3a88774
+  $whandleEvents ::
+    GHC.Prim.Addr#
+    -> Types.GameState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Types.GameState #)
+  {- Arity: 3,
+     Strictness: <S,U><L,1*U(1*U(U,U,U,A,U,U),U,U,U,U,U,U,U,U,U,U,U)><S,U>,
+     Inline: [0] -}
+b9dc77fab2b330fc9d5a92058370fc3a
+  exitPressed ::
+    Graphics.UI.GLFW.Types.Window -> GHC.Types.IO GHC.Types.Bool
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Backend.exitPressed1
+                  `cast`
+                (<Graphics.UI.GLFW.Types.Window>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <GHC.Types.Bool>_R)) -}
+73dd399c8f8bcda9fb9f2221836d231f
+  exitPressed1 ::
+    Graphics.UI.GLFW.Types.Window
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, GHC.Types.Bool #)
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,U>, Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Graphics.UI.GLFW.Types.Window)
+                   (w1 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case w `cast`
+                      (Graphics.UI.GLFW.Types.N:Window[0]) of ww { GHC.Ptr.Ptr ww1 ->
+                 Backend.$wexitPressed ww1 w1 }) -}
+a2e6e082914cb2947c76894f12ba74b2
+  exitPressed2 :: GHC.Types.Int
+  {- Unfolding: (case Graphics.UI.GLFW.C.$w$ctoC2
+                        Graphics.UI.GLFW.Types.Key'Escape of v { DEFAULT ->
+                 GHC.Types.I# v }) -}
+f1a437efca6e9fb97ee2567816f8962c
+  handleEvents ::
+    Graphics.UI.GLFW.Types.Window
+    -> Types.GameState -> GHC.Types.IO Types.GameState
+  {- Arity: 3,
+     Strictness: <S(S),1*U(U)><L,1*U(1*U(U,U,U,A,U,U),U,U,U,U,U,U,U,U,U,U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Backend.handleEvents1
+                  `cast`
+                (<Graphics.UI.GLFW.Types.Window>_R
+                 ->_R <Types.GameState>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <Types.GameState>_R)) -}
+1d5c2b41dc14389335e520808b13d789
+  handleEvents1 ::
+    Graphics.UI.GLFW.Types.Window
+    -> Types.GameState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Types.GameState #)
+  {- Arity: 3,
+     Strictness: <S(S),1*U(U)><L,1*U(1*U(U,U,U,A,U,U),U,U,U,U,U,U,U,U,U,U,U)><S,U>,
+     Inline: [0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: Graphics.UI.GLFW.Types.Window)
+                   (w1 :: Types.GameState)
+                   (w2 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case w `cast`
+                      (Graphics.UI.GLFW.Types.N:Window[0]) of ww { GHC.Ptr.Ptr ww1 ->
+                 Backend.$whandleEvents ww1 w1 w2 }) -}
+b2bd0811c18bcfe4f577e017dd54c0bb
+  isPress :: Graphics.UI.GLFW.Types.KeyState -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Graphics.UI.GLFW.Types.KeyState) ->
+                 case ds of wild {
+                   DEFAULT -> GHC.Types.False
+                   Graphics.UI.GLFW.Types.KeyState'Pressed -> GHC.Types.True }) -}
+fea04f3ac79f42568e681508ecab43c3
+  loadAssets :: GHC.Types.IO (Types.Sounds, Types.Sprites)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Backend.loadAssets1
+                  `cast`
+                (Sym (GHC.Types.N:IO[0] <(Types.Sounds, Types.Sprites)>_R)) -}
+83fbb6573fb8d9342429c06f53ac0408
+  loadAssets1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          (Types.Sounds, Types.Sprites) #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Backend.loadAssets7 s of ds1 { (#,#) ipv2 ipv3 ->
+                 (# ipv2, (Backend.loadAssets2, ipv3) #) }) -}
+9aff49675c47b86f4a6fe05966503d3c
+  loadAssets2 :: Types.Sounds
+  {- Strictness: m,
+     Unfolding: (Types.Sounds
+                   Backend.loadAssets5
+                   Backend.loadAssets3) -}
+1f60a1ea0580f7288d5cb649cee01b70
+  loadAssets3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Backend.loadAssets4) -}
+c9faf2506063ea6feb4b1123117927ab
+  loadAssets4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Boop"#) -}
+7fc0ed31a2f267626e4511ca66630dda
+  loadAssets5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Backend.loadAssets6) -}
+3a4f14e8413f06cc4c876f19803f33a0
+  loadAssets6 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Beep"#) -}
+0d723ee84bf535afa9fd022c9b311123
+  loadAssets7 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Types.Sprites #)
+  {- Arity: 1, Strictness: <S,U> -}
+032356653cc16812983b984bd31f27c6
+  loadSounds :: GHC.Types.IO Types.Sounds
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Backend.loadSounds1
+                  `cast`
+                (Sym (GHC.Types.N:IO[0] <Types.Sounds>_R)) -}
+e93b49979dbb1f81b3d3b78cc0af8ac4
+  loadSounds1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Types.Sounds #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 (# s, Backend.loadAssets2 #)) -}
+9b548aa4c387b725d673ee65ec128f76
+  loadSprites :: GHC.Types.IO Types.Sprites
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Backend.loadAssets7
+                  `cast`
+                (Sym (GHC.Types.N:IO[0] <Types.Sprites>_R)) -}
+7855a4e1ad2cea5b26b2df482535a542
+  withWindow ::
+    GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Base.String
+    -> (Graphics.UI.GLFW.Types.Window -> GHC.Types.IO ())
+    -> GHC.Types.IO ()
+  {- Arity: 5,
+     Strictness: <L,1*U(U)><L,1*U(U)><L,U><L,1*C1(C1(U(U,A)))><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Backend.withWindow1
+                  `cast`
+                (<GHC.Types.Int>_R
+                 ->_R <GHC.Types.Int>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R <Graphics.UI.GLFW.Types.Window -> GHC.Types.IO ()>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+479dfbecfd0a7a88f41dd12b82fb81cd
+  withWindow1 ::
+    GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Base.String
+    -> (Graphics.UI.GLFW.Types.Window -> GHC.Types.IO ())
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 5,
+     Strictness: <L,1*U(U)><L,1*U(U)><L,U><L,1*C1(C1(U(U,A)))><S,U>,
+     Unfolding: (\ (width :: GHC.Types.Int)
+                   (height :: GHC.Types.Int)
+                   (title :: GHC.Base.String)
+                   (f :: Graphics.UI.GLFW.Types.Window -> GHC.Types.IO ())
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case Graphics.UI.GLFW.setErrorCallback1
+                        Backend.withWindow2
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case {__pkg_ccall_GC bindings-GLFW-3.2.1.1 GHC.Prim.State#
+                                                              GHC.Prim.RealWorld
+                                                            -> (# GHC.Prim.State#
+                                                                    GHC.Prim.RealWorld,
+                                                                  GHC.Prim.Int# #)}
+                        ipv of wild { (#,#) ds2 ds3 ->
+                 case GHC.Prim.narrow32Int# ds3 of wild1 {
+                   DEFAULT
+                   -> case Graphics.UI.GLFW.C.$wlvl wild1
+                      ret_ty (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+                      of {}
+                   0# -> Graphics.UI.GLFW.terminate1 ds2
+                   1#
+                   -> case Graphics.UI.GLFW.createWindow1
+                             width
+                             height
+                             title
+                             (GHC.Base.Nothing @ Graphics.UI.GLFW.Types.Monitor)
+                             (GHC.Base.Nothing @ Graphics.UI.GLFW.Types.Window)
+                             ds2 of ds4 { (#,#) ipv2 ipv3 ->
+                      case ipv3 of wild2 {
+                        GHC.Base.Nothing -> Graphics.UI.GLFW.terminate1 ipv2
+                        GHC.Base.Just win
+                        -> case win
+                                  `cast`
+                                (Graphics.UI.GLFW.Types.N:Window[0]) of ds5 { GHC.Ptr.Ptr ds6 ->
+                           case {__pkg_ccall_GC bindings-GLFW-3.2.1.1 GHC.Prim.Addr#
+                                                                      -> GHC.Prim.State#
+                                                                           GHC.Prim.RealWorld
+                                                                      -> (# GHC.Prim.State#
+                                                                              GHC.Prim.RealWorld #)}
+                                  ds6
+                                  ipv2 of wild3 { Unit# ds7 ->
+                           case (f ds5 `cast` (Sym (Graphics.UI.GLFW.Types.N:Window[0])))
+                                  `cast`
+                                (GHC.Types.N:IO[0] <()>_R)
+                                  ds7 of ds8 { (#,#) ipv4 ipv5 ->
+                           case Graphics.UI.GLFW.setErrorCallback1
+                                  Backend.withWindow2
+                                  ipv4 of ds9 { (#,#) ipv6 ipv7 ->
+                           case Graphics.UI.GLFW.$wdestroyWindow
+                                  ds6
+                                  ipv6 of ds10 { (#,#) ipv8 ipv9 ->
+                           Graphics.UI.GLFW.terminate1 ipv8 } } } } } } } } } }) -}
+6c1e50d613b10d8b728267a38cbb983f
+  withWindow2 ::
+    GHC.Base.Maybe
+      (Graphics.UI.GLFW.Types.Error
+       -> GHC.Base.String -> GHC.Types.IO ())
+  {- Strictness: m2,
+     Unfolding: (GHC.Base.Just
+                   @ (Graphics.UI.GLFW.Types.Error
+                      -> GHC.Base.String -> GHC.Types.IO ())
+                   Backend.withWindow3
+                     `cast`
+                   (<Graphics.UI.GLFW.Types.Error>_R
+                    ->_R <GHC.Base.String>_R
+                    ->_R Sym (GHC.Types.N:IO[0] <()>_R))) -}
+eaa51aa3667e1b21b8d270bc1fe5d959
+  withWindow3 ::
+    Graphics.UI.GLFW.Types.Error
+    -> GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 2, Strictness: <L,1*U><L,1*U>,
+     Unfolding: (\ (e :: Graphics.UI.GLFW.Types.Error)
+                   (s :: GHC.Base.String) ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (GHC.Base.++
+                      @ GHC.Types.Char
+                      (Graphics.UI.GLFW.Types.$w$cshowsPrec5
+                         e
+                         (GHC.Types.[] @ GHC.Types.Char))
+                      (GHC.Types.:
+                         @ GHC.Types.Char
+                         Backend.withWindow4
+                         (GHC.Base.++_$s++
+                            @ GHC.Types.Char
+                            (GHC.Types.[] @ GHC.Types.Char)
+                            GHC.Show.$fShow(,)3
+                            (GHC.Show.showLitString s GHC.Show.$fShow[]1))))
+                   GHC.Types.True) -}
+fe9b59f9a34c3d25bdad6d9f5d489311
+  withWindow4 :: GHC.Types.Char
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# ' '#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -53,7 +53,7 @@ updateWeebAnimations :: NominalDiffTime -> Sprites -> GameState -> GameState
 updateWeebAnimations timeDiff sprites state = state { weebs = fmap (updateWeebAnimation timeDiff sprites) $ weebs state }
 
 updateWeebAnimation :: NominalDiffTime -> Sprites -> Weeb -> Weeb
-updateWeebAnimation timeDiff sprites (Weeb p animation action dead) = Weeb p animation' action dead
+updateWeebAnimation timeDiff sprites (Weeb p animation action dead alive) = Weeb p animation' action dead alive
   where
     animation' =
       if null $ snd animation

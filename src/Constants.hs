@@ -21,7 +21,7 @@ weebHeightScale :: Float
 weebHeightScale = 1/7
 
 moveSpeed :: Float
-moveSpeed = fromIntegral gameWidth/3
+moveSpeed = fromIntegral gameWidth/2.5
 
 hammerMaxAngle :: Float
 hammerMaxAngle = atan(78/70)
@@ -64,28 +64,31 @@ hitPointRadiusRight :: Float
 hitPointRadiusRight = sqrt (70 ** 2 + 78 ** 2)
 
 minWeebCooldown :: Difficulty -> Float
-minWeebCooldown Easy    = 3
-minWeebCooldown Medium  = 2
-minWeebCooldown Hard    = 1
+minWeebCooldown Easy    = 1.5
+minWeebCooldown Medium  = 1
+minWeebCooldown Hard    = 0.8
 minWeebCooldown Extreme = 0.6
 
 maxWeebCooldown :: Difficulty -> Float
-maxWeebCooldown Easy    = 6
-maxWeebCooldown Medium  = 5
-maxWeebCooldown Hard    = 3
-maxWeebCooldown Extreme = 2
+maxWeebCooldown Easy    = 3
+maxWeebCooldown Medium  = 2
+maxWeebCooldown Hard    = 2
+maxWeebCooldown Extreme = 1.5
 
 
-letterWidth,letterHeight :: Float
-letterWidth = 30
-letterHeight = 40
+digitWidth,digitHeight :: Float
+digitWidth = 30
+digitHeight = 40
 
 heartWidth,heartHeight :: Float
 heartWidth = 40
 heartHeight = 40
 
+difficultyHeight :: Float
+difficultyHeight = 40
 
-initGameState = GameState (Player (0,0) 0 Types.Left [] (Still Types.Left) (Still Types.Left,[])) [] hammerMaxAngle Nothing 0 0 0 3 Extreme False []
+
+initGameState = GameState (Player (0,0) 0 Types.Left [] (Still Types.Left) (Still Types.Left,[])) [] hammerMaxAngle Nothing 0 0 0 7 Extreme 0 False []
 
 backgroundColor = makeColor 204 255 255 255
 
@@ -100,6 +103,9 @@ g = (-2)*(fromIntegral gameHeight)
 
 deadTimer :: Float
 deadTimer = 1
+
+aliveTimer :: Float
+aliveTimer = 10
 
 torbSpriteWidth,torbSpriteHeight :: Float
 torbSpriteWidth = 125

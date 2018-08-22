@@ -17,6 +17,8 @@ data Difficulty = Easy | Medium | Hard | Extreme
 
 data SwingDirection = SwingUp | SwingDown deriving (Eq)
 
+data Sound = SoundHit | SoundLose | SoundDisappear
+
 
 data WeebAction = Normal | Dead deriving (Eq)
 
@@ -34,22 +36,37 @@ data Sounds = Sounds
             }
 
 data Sprites = Sprites
-            { torbStillRight    :: Sprite
-            , torbStillLeft     :: Sprite
-            , torbHammerRight   :: Sprite
-            , torbHammerLeft    :: Sprite
-            , torbRunRight      :: Sprite
-            , torbRunLeft       :: Sprite
-            , torbFallRight     :: Sprite
-            , torbFallLeft      :: Sprite
-            , weebStillRight    :: Sprite
-            , weebStillLeft     :: Sprite
-            , weebDabRight      :: Sprite
-            , weebDabLeft       :: Sprite
-            , weebSmackedRight1 :: Sprite
-            , weebSmackedLeft1  :: Sprite
-            , weebSmackedRight2 :: Sprite
-            , weebSmackedLeft2  :: Sprite
+            { torbStillRight       :: Sprite
+            , torbStillLeft        :: Sprite
+            , torbHammerRight      :: Sprite
+            , torbHammerLeft       :: Sprite
+            , torbRunRight         :: Sprite
+            , torbRunLeft          :: Sprite
+            , torbFallRight        :: Sprite
+            , torbFallLeft         :: Sprite
+            , weebStillRight       :: Sprite
+            , weebStillLeft        :: Sprite
+            , weebDabRight         :: Sprite
+            , weebDabLeft          :: Sprite
+            , weebSmackedRight1    :: Sprite
+            , weebSmackedLeft1     :: Sprite
+            , weebSmackedRight2    :: Sprite
+            , weebSmackedLeft2     :: Sprite
+            , heart                :: Sprite
+            , digit0               :: Sprite
+            , digit1               :: Sprite
+            , digit2               :: Sprite
+            , digit3               :: Sprite
+            , digit4               :: Sprite
+            , digit5               :: Sprite
+            , digit6               :: Sprite
+            , digit7               :: Sprite
+            , digit8               :: Sprite
+            , digit9               :: Sprite
+            , weakWeebs            :: Sprite
+            , garbageGenjis        :: Sprite
+            , shittyShimadas       :: Sprite
+            , noodleMunchinNarutos :: Sprite
             }
 
 data Player = Player 
@@ -66,6 +83,7 @@ data Weeb = Weeb
           , weebAnimation :: (WeebAction,Animation)
           , weebAction    :: WeebAction
           , weebDead      :: Float
+          , weebAlive     :: Float
           }
 data GameState = GameState 
                { player         :: Player
@@ -77,8 +95,9 @@ data GameState = GameState
                , points         :: Int
                , lives          :: Int
                , difficulty     :: Difficulty
+               , diffCooldown   :: Float
                , gameEnded      :: Bool
-               , soundQueue     :: [String]
+               , soundQueue     :: [Sound]
                }
 
 instance Show Weeb where

@@ -41,7 +41,7 @@ main = do
 
               -- Networking goes here
 
-              putStrLn $ show $ hammerHitPoint state'
+              --putStrLn $ show $ hammerHitPoint state'
               --putStrLn $ show $ hammerAngle state
 
               --putStrLn $ show $ (playerVel . player) state

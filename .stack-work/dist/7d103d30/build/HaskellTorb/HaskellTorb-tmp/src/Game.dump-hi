@@ -1,0 +1,1609 @@
+
+==================== FINAL INTERFACE ====================
+2018-08-03 18:59:35.2885448 UTC
+
+interface main:Game 8043
+  interface hash: f1f735624f3e8af9d37392185626ada9
+  ABI hash: 8184afe2209d52cd04f13120161eeb91
+  export-list hash: 45f892a25dcf16424d8ef4034e5cac79
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 05a7dfc725707cda3dfdbf87b0f28b5d
+  opt_hash: 14e536840aca4e889cad654e6f9b79c1
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Game.changeDifficulty
+  Game.clearWeebs
+  Game.cycleDifficultyDown
+  Game.cycleDifficultyUp
+  Game.exitGame
+  Game.fall
+  Game.groundVelocityReset
+  Game.hammerHitPoint
+  Game.hammerPosition
+  Game.hammerSmack
+  Game.isInHitbox
+  Game.jump
+  Game.killWeebs
+  Game.moveHammer
+  Game.moveLeft
+  Game.moveRight
+  Game.moveVertical
+  Game.outOfMap
+  Game.spawnWeebs
+  Game.standStill
+  Game.swingHammer
+  Game.updateDiffCooldown
+  Game.updateGameState
+  Game.updateHammerCooldown
+  Game.updateWeebAliveTimer
+  Game.updateWeebDeadTimer
+  Game.updateWeebTimers
+module dependencies: Constants Types
+package dependencies: GLFW-b-3.2.1.0 GLURaw-2.0.0.4 GLUT-2.7.0.13
+                      ObjectName-1.1.0.1 OpenGL-3.0.2.1 OpenGLRaw-3.3.0.2
+                      StateVar-1.1.1.0 Win32-2.6.1.0 array-0.5.2.0 base-4.11.1.0
+                      binary-0.8.5.1 bindings-GLFW-3.2.1.1 bmp-1.2.6.3
+                      bytestring-0.10.8.2 containers-0.5.11.0 deepseq-1.4.3.0
+                      fixed-0.2.1.1 ghc-boot-th-8.4.3 ghc-prim-0.5.2.0 gloss-1.12.0.0
+                      gloss-rendering-1.12.0.0 half-0.3 integer-gmp-1.0.2.0
+                      pretty-1.1.3.6 random-1.1 stm-2.4.5.0 template-haskell-2.13.0.0
+                      text-1.2.3.0 time-1.8.0.2
+orphans: time-1.8.0.2:Data.Time.Format.Parse
+         time-1.8.0.2:Data.Time.LocalTime.Internal.ZonedTime
+         time-1.8.0.2:Data.Time.LocalTime.Internal.LocalTime
+         time-1.8.0.2:Data.Time.Calendar.Gregorian
+         stm-2.4.5.0:Control.Monad.STM text-1.2.3.0:Data.Text
+         binary-0.8.5.1:Data.Binary.Generic text-1.2.3.0:Data.Text.Show
+         bytestring-0.10.8.2:Data.ByteString.Builder
+         GLFW-b-3.2.1.0:Graphics.UI.GLFW.Types base-4.11.1.0:GHC.Float
+         base-4.11.1.0:GHC.Base
+family instance modules: GLFW-b-3.2.1.0:Graphics.UI.GLFW.Types
+                         base-4.11.1.0:Control.Applicative base-4.11.1.0:Data.Complex
+                         base-4.11.1.0:Data.Functor.Compose base-4.11.1.0:Data.Functor.Const
+                         base-4.11.1.0:Data.Functor.Identity
+                         base-4.11.1.0:Data.Functor.Product base-4.11.1.0:Data.Functor.Sum
+                         base-4.11.1.0:Data.Monoid base-4.11.1.0:Data.Semigroup
+                         base-4.11.1.0:Data.Semigroup.Internal base-4.11.1.0:Data.Version
+                         base-4.11.1.0:Data.Void base-4.11.1.0:GHC.Exts
+                         base-4.11.1.0:GHC.Generics base-4.11.1.0:GHC.IO.Exception
+                         containers-0.5.11.0:Data.IntMap.Internal
+                         containers-0.5.11.0:Data.IntSet.Internal
+                         containers-0.5.11.0:Data.Map.Internal
+                         containers-0.5.11.0:Data.Sequence.Internal
+                         containers-0.5.11.0:Data.Set.Internal containers-0.5.11.0:Data.Tree
+                         ghc-boot-th-8.4.3:GHC.ForeignSrcLang.Type
+                         ghc-boot-th-8.4.3:GHC.LanguageExtensions.Type half-0.3:Numeric.Half
+                         pretty-1.1.3.6:Text.PrettyPrint.Annotated.HughesPJ
+                         pretty-1.1.3.6:Text.PrettyPrint.HughesPJ
+                         template-haskell-2.13.0.0:Language.Haskell.TH.Syntax
+                         text-1.2.3.0:Data.Text
+import  -/  GLFW-b-3.2.1.0:Graphics.UI.GLFW 86f3667524073c1d9547e4e903e843d3
+import  -/  GLFW-b-3.2.1.0:Graphics.UI.GLFW.Types 9cda662418961203831abeb5efb31d4a
+import  -/  base-4.11.1.0:Data.Foldable 6cf3e918f22d03c0870804f05cd183d1
+import  -/  base-4.11.1.0:GHC.Base b7dd14d8fe8d606dde5678ea6b0575e9
+import  -/  base-4.11.1.0:GHC.Float 99ddb84df6cc12bd84829dd8cd755ac2
+import  -/  base-4.11.1.0:GHC.List 95910b50fba2204d1a3364fe070ebf2b
+import  -/  base-4.11.1.0:GHC.Num 5de8df0185e7e8d8ec29b3c61e2c8606
+import  -/  base-4.11.1.0:GHC.Real 032ed0a1053f878238d78e95e75f2edf
+import  -/  base-4.11.1.0:Prelude aca391812f777207b15d62bb5b9feb63
+import  -/  ghc-prim-0.5.2.0:GHC.Classes f7d67fd97d5a20e9252c9597d1aa387b
+import  -/  ghc-prim-0.5.2.0:GHC.Types d9b3023de7feae4a5308d643da5543f7
+import  -/  Constants 916c21825e88169b843e7af4cf9b1bda
+  exports: 65df7f5b0b18332b03cc258368944848
+  aliveTimer 37f9869ace32a791dfaa467ff10eb64d
+  attachAngleDiffLeft 1e57844fe5df38dc9ce619a767b89c38
+  attachAngleDiffRight b86f020e6c242673eedd5830dd701211
+  attachRadiusLeft 6c7af0b2570d2f10b900f1e298a8f910
+  attachRadiusRight 23e5b58885622e14578f51d49fede30d
+  attachXLeft c650b4c97f1b4f2718b4e3b5f53d06ac
+  attachXRight 626289ce549f3d3595f4f33e7dfeecce
+  attachYLeft c82695402dae18846752bff819fb88b9
+  attachYRight 5cacc1aacc98cd9b8ce8e668e0b62441
+  deadTimer c8380f3fe82b85bd2667d0022f9f307b
+  g 49d8bfd986982513c7f0cceb2d642d6e
+  gameHeight 0a0aef2e876feca61928f7c7b58e6c7a
+  gameWidth 84f9e13caf1361ab16282de7acb40794
+  hammerMaxAngle 08621ff3c6bcf13e1d8293d0954ef330
+  hitPointAngleLeft 2c007419f91e2be6ce8a08181ac4e47f
+  hitPointRadiusLeft 18dfece3cb05327e35f97b75c0d2a0db
+  hitPointRadiusRight 56003076ea59701dceb68f9fd188864f
+  jumpSpeed 0c611039b46097d19e3039ed54a23d48
+  maxWeebCooldown 7e958a8a5ed4c12bd8ace7adab30c084
+  minWeebCooldown 9d6797272bf944cd46445d2f4f28438f
+  moveSpeed 8f8f7790ecb3dedfa36cabd46abe8331
+  swingSpeed 20aa4cc028eb648cd5d3a356b82da38b
+  torbHeight 852d004d27d98d8cb995d46e8f36f75f
+  torbWidth 789c5f98cc37e5a13b7763de34324e08
+  weebHeight 5960789e111c26223cb36806b39d576e
+  weebWidth 1525ac377906a1d9f15257be5d0bfc24
+import  -/  Types 86017bc6ec9258d54a2cd0a7197d3a23
+  exports: cdab6bcc0f25b78227451b5170314fa3
+  Dead 2968a2da35f480f29cd886c13234fbfa
+  Difficulty 7014142eceb4aa55045f9bb68a5a975e
+  Easy a156c75960fecb2ae14e822ee6568842
+  Extreme 7c4ee4080d02968c9cb6c76190b6b297
+  Falling 619681807eacf04e928f1106bed9fb23
+  GameState 4b258a32ea66243b92437ea70cfe13af
+  Hard 2a6a17865eb3d8742f468179779eea51
+  Left 17e26f6d5a819f27499ac1bb0cc50ed2
+  Medium e97833f130d702f00eb3eb2397cd5f17
+  Normal 75ca1702131f69c51d4c32ca05d1bf4d
+  Position 4145c3e00efe8d0e2bb0b377642e4859
+  Right 063d8a9f293b2a1f3101c191e7e8d893
+  Running 9a2da9b7b7feb1b4117b6f178b8c090f
+  Still 5033b4c73e618e49a26d0883046f95eb
+  SwingDown 0e63b4f7f905cd8e14b25e4f8130a20e
+  SwingUp f2a6391a1a9d50671bd26079c0a6c708
+  Weeb 10967d5f016769bc8650f1b639037bd1
+  Weeb 70757ca2726e50931866d5492951c3eb
+  diffCooldown 4b258a32ea66243b92437ea70cfe13af
+  difficulty 4b258a32ea66243b92437ea70cfe13af
+  gameEnded 4b258a32ea66243b92437ea70cfe13af
+  hammerAngle 4b258a32ea66243b92437ea70cfe13af
+  lives 4b258a32ea66243b92437ea70cfe13af
+  player 4b258a32ea66243b92437ea70cfe13af
+  playerAction 3860cdc8ce3a18e2c97d80b31e2bdf29
+  playerFacing 3860cdc8ce3a18e2c97d80b31e2bdf29
+  playerPos 3860cdc8ce3a18e2c97d80b31e2bdf29
+  playerVel 3860cdc8ce3a18e2c97d80b31e2bdf29
+  points 4b258a32ea66243b92437ea70cfe13af
+  pressedKeys 3860cdc8ce3a18e2c97d80b31e2bdf29
+  swingCooldown 4b258a32ea66243b92437ea70cfe13af
+  swingDirection 4b258a32ea66243b92437ea70cfe13af
+  weebAction 70757ca2726e50931866d5492951c3eb
+  weebCooldown 4b258a32ea66243b92437ea70cfe13af
+  weebPos 70757ca2726e50931866d5492951c3eb
+  weebs 4b258a32ea66243b92437ea70cfe13af
+import  -/  random-1.1:System.Random cf743494f6d6907bf2f14dbc9174bff3
+import  -/  time-1.8.0.2:Data.Time.Clock 76440c4737e8185bc6b1842c7242fac7
+import  -/  time-1.8.0.2:Data.Time.Clock.Internal.NominalDiffTime 4fbecbab02a5f9e6a8299a15b23e2e5f
+7daa6134502f3dd98526679bea741dfc
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Game.$trModule3 Game.$trModule1) -}
+bfee1f5b0c4de0a455a2b42f7ab2b711
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Game.$trModule2) -}
+056bd69872a3de4abb79612e341f023d
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Game"#) -}
+02174a347539e66da4011d16a676e611
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Game.$trModule4) -}
+39ebd692af9bafaa40647a55cc4761b0
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+5c2180f467b7eb9d1c50505c03dae73e
+  $wgo :: [Types.Weeb] -> GHC.Prim.Int# -> GHC.Prim.Int#
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,U>, Inline: [0] -}
+1c1640493a8a9b351a141329cae4bf21
+  $wgo1 :: [Types.Weeb] -> GHC.Prim.Int# -> GHC.Prim.Int#
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,U>, Inline: [0] -}
+8635ea2d93ad944c3826bf0ff5f4fd04
+  $whammerHitPoint ::
+    Types.GameState -> (# GHC.Types.Float, GHC.Types.Float #)
+  {- Arity: 1,
+     Strictness: <L,U(U(U(U(U),U(U)),A,U,A,A,A),A,U(U),A,A,A,A,A,A,A,A,A)>,
+     Inline: [0],
+     Unfolding: (\ (w :: Types.GameState) ->
+                 let {
+                   ds :: (GHC.Types.Float, GHC.Types.Float)
+                   = case w of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                     case ds1 of wild1 { Types.Player ds16 ds17 ds18 ds19 ds20 ds21 ->
+                     case ds18 of wild2 {
+                       Types.Left
+                       -> (case Constants.hammerMaxAngle of wild3 { GHC.Types.F# x ->
+                           case ds3 of wild4 { GHC.Types.F# y ->
+                           GHC.Types.F#
+                             (GHC.Prim.timesFloat#
+                                78.0#
+                                (GHC.Prim.cosFloat#
+                                   (GHC.Prim.plusFloat#
+                                      (GHC.Prim.minusFloat# x y)
+                                      1.5707964#))) } },
+                           case Constants.hammerMaxAngle of wild3 { GHC.Types.F# x ->
+                           case ds3 of wild4 { GHC.Types.F# y ->
+                           GHC.Types.F#
+                             (GHC.Prim.timesFloat#
+                                78.0#
+                                (GHC.Prim.sinFloat#
+                                   (GHC.Prim.plusFloat#
+                                      (GHC.Prim.minusFloat# x y)
+                                      1.5707964#))) } })
+                       Types.Right
+                       -> (case Constants.hitPointRadiusRight of wild3 { GHC.Types.F# x ->
+                           case ds3 of wild4 { GHC.Types.F# x1 ->
+                           GHC.Types.F# (GHC.Prim.timesFloat# x (GHC.Prim.cosFloat# x1)) } },
+                           case Constants.hitPointRadiusRight of wild3 { GHC.Types.F# x ->
+                           case ds3 of wild4 { GHC.Types.F# x1 ->
+                           GHC.Types.F#
+                             (GHC.Prim.timesFloat# x (GHC.Prim.sinFloat# x1)) } }) } } }
+                 } in
+                 let {
+                   ds1 :: (GHC.Types.Float, GHC.Types.Float)
+                   = case Game.$whammerPosition w of ww { (#,#) ww1 ww2 ->
+                     (ww1, ww2) }
+                 } in
+                 (# case ds1 of wild { (,) x y ->
+                    case x of wild1 { GHC.Types.F# x1 ->
+                    case ds of wild2 { (,) dx dy ->
+                    case dx of wild3 { GHC.Types.F# y1 ->
+                    GHC.Types.F# (GHC.Prim.plusFloat# x1 y1) } } } },
+                    case ds1 of wild { (,) x y ->
+                    case y of wild1 { GHC.Types.F# x1 ->
+                    case ds of wild2 { (,) dx dy ->
+                    case dy of wild3 { GHC.Types.F# y1 ->
+                    GHC.Types.F# (GHC.Prim.plusFloat# x1 y1) } } } } #)) -}
+cff521a796cb9ac72819d48e8b5b3ea5
+  $whammerPosition ::
+    Types.GameState -> (# GHC.Types.Float, GHC.Types.Float #)
+  {- Arity: 1,
+     Strictness: <L,U(U(1*U(1*U(U),1*U(U)),A,1*U,A,A,A),A,U(U),A,A,A,A,A,A,A,A,A)>,
+     Inline: [0],
+     Unfolding: (\ (w :: Types.GameState) ->
+                 let {
+                   ds :: (GHC.Types.Float, GHC.Types.Float)
+                   = case w of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                     case ds1 of wild1 { Types.Player ds16 ds17 ds18 ds19 ds20 ds21 ->
+                     case ds18 of wild2 {
+                       Types.Left
+                       -> (case Constants.attachRadiusLeft of wild3 { GHC.Types.F# x ->
+                           case Constants.hammerMaxAngle of wild4 { GHC.Types.F# x1 ->
+                           case ds3 of wild5 { GHC.Types.F# y ->
+                           case Constants.attachAngleDiffLeft of wild6 { GHC.Types.F# y1 ->
+                           GHC.Types.F#
+                             (GHC.Prim.plusFloat#
+                                (GHC.Prim.minusFloat#
+                                   (GHC.Prim.minusFloat#
+                                      66.0#
+                                      (GHC.Prim.timesFloat#
+                                         x
+                                         (GHC.Prim.cosFloat#
+                                            (GHC.Prim.plusFloat# (GHC.Prim.minusFloat# x1 y) y1))))
+                                   43.269234#)
+                                21.634617#) } } } },
+                           case Constants.attachRadiusLeft of wild3 { GHC.Types.F# x ->
+                           case Constants.hammerMaxAngle of wild4 { GHC.Types.F# x1 ->
+                           case ds3 of wild5 { GHC.Types.F# y ->
+                           case Constants.attachAngleDiffLeft of wild6 { GHC.Types.F# y1 ->
+                           GHC.Types.F#
+                             (GHC.Prim.plusFloat#
+                                (GHC.Prim.minusFloat#
+                                   25.0#
+                                   (GHC.Prim.timesFloat#
+                                      x
+                                      (GHC.Prim.sinFloat#
+                                         (GHC.Prim.plusFloat# (GHC.Prim.minusFloat# x1 y) y1))))
+                                72.0#) } } } })
+                       Types.Right
+                       -> (case Constants.attachRadiusRight of wild3 { GHC.Types.F# x ->
+                           case ds3 of wild4 { GHC.Types.F# x1 ->
+                           case Constants.attachAngleDiffRight of wild5 { GHC.Types.F# y ->
+                           GHC.Types.F#
+                             (GHC.Prim.minusFloat#
+                                (GHC.Prim.plusFloat#
+                                   (GHC.Prim.minusFloat#
+                                      4.0#
+                                      (GHC.Prim.timesFloat#
+                                         x
+                                         (GHC.Prim.cosFloat# (GHC.Prim.plusFloat# x1 y))))
+                                   43.269234#)
+                                7.8671336#) } } },
+                           case Constants.attachRadiusRight of wild3 { GHC.Types.F# x ->
+                           case ds3 of wild4 { GHC.Types.F# x1 ->
+                           case Constants.attachAngleDiffRight of wild5 { GHC.Types.F# y ->
+                           GHC.Types.F#
+                             (GHC.Prim.plusFloat#
+                                (GHC.Prim.minusFloat#
+                                   25.0#
+                                   (GHC.Prim.timesFloat#
+                                      x
+                                      (GHC.Prim.sinFloat# (GHC.Prim.plusFloat# x1 y))))
+                                72.0#) } } }) } } }
+                 } in
+                 let {
+                   ds1 :: (GHC.Types.Float, GHC.Types.Float)
+                   = case w of wild { Types.GameState ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ->
+                     case ds2 of wild1 { Types.Player ds14 ds15 ds16 ds17 ds18 ds19 ->
+                     ds14 } }
+                 } in
+                 (# case ds1 of wild { (,) x y ->
+                    case x of wild1 { GHC.Types.F# x1 ->
+                    case ds of wild2 { (,) dx dy ->
+                    case dx of wild3 { GHC.Types.F# y1 ->
+                    GHC.Types.F# (GHC.Prim.plusFloat# x1 y1) } } } },
+                    case ds1 of wild { (,) x y ->
+                    case y of wild1 { GHC.Types.F# x1 ->
+                    case ds of wild2 { (,) dx dy ->
+                    case dy of wild3 { GHC.Types.F# y1 ->
+                    GHC.Types.F# (GHC.Prim.plusFloat# x1 y1) } } } } #)) -}
+13449c69ee45a604c1ce55e94be8b1d7
+  $wisInHitbox ::
+    GHC.Prim.Float#
+    -> GHC.Types.Float
+    -> GHC.Prim.Float#
+    -> GHC.Types.Float
+    -> GHC.Types.Bool
+  {- Arity: 4, HasNoCafRefs,
+     Strictness: <S,U><L,1*U(U)><S,U><L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Float#)
+                   (ww1 :: GHC.Types.Float)
+                   (ww2 :: GHC.Prim.Float#)
+                   (ww3 :: GHC.Types.Float) ->
+                 case GHC.Prim.geFloat# ww ww2 of lwild {
+                   DEFAULT -> GHC.Types.False
+                   1#
+                   -> case GHC.Prim.leFloat#
+                             ww
+                             (GHC.Prim.plusFloat# ww2 95.68107#) of lwild1 {
+                        DEFAULT -> GHC.Types.False
+                        1#
+                        -> case ww1 of wild { GHC.Types.F# x ->
+                           case ww3 of wild1 { GHC.Types.F# y ->
+                           case GHC.Prim.geFloat# x y of lwild2 {
+                             DEFAULT -> GHC.Types.False
+                             1#
+                             -> GHC.Prim.tagToEnum#
+                                  @ GHC.Types.Bool
+                                  (GHC.Prim.leFloat#
+                                     x
+                                     (GHC.Prim.plusFloat# y 102.85715#)) } } } } }) -}
+9c84be59e52ef60d561e023b2f3b9682
+  changeDifficulty :: Types.GameState -> Types.GameState
+  {- Arity: 1,
+     Strictness: <S(LLLLLLLLLS(S)LL),1*U(U(U,U,U,U,U,U),U,U,U,U,U,U,U,U,U(U),U,U)>,
+     Unfolding: (\ (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 case ds10 of wild1 { GHC.Types.F# x ->
+                 case GHC.Prim.leFloat# x 0.0# of lwild {
+                   DEFAULT -> wild
+                   1#
+                   -> Types.GameState
+                        ds1
+                        ds2
+                        ds3
+                        ds4
+                        ds5
+                        ds6
+                        ds7
+                        ds8
+                        (case ds1 of wild2 { Types.Player ds16 ds17 ds18 ds19 ds20 ds21 ->
+                         case GHC.List.filter
+                                @ Graphics.UI.GLFW.Types.Key
+                                Game.changeDifficulty3
+                                ds19 of wild3 {
+                           [] -> ds9
+                           : ds22 ds23
+                           -> case ds22 of wild4 {
+                                DEFAULT
+                                -> case Game.changeDifficulty2 ret_ty Types.Difficulty of {}
+                                Graphics.UI.GLFW.Types.Key'Down -> Game.cycleDifficultyDown ds9
+                                Graphics.UI.GLFW.Types.Key'Up -> Game.cycleDifficultyUp ds9 } } })
+                        Game.changeDifficulty1
+                        ds11
+                        ds12 } } }) -}
+4e3ab2c483e8e4642357f20f4c639256
+  changeDifficulty1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.1#) -}
+c08910136ec54e62fc012887015019fb
+  changeDifficulty2 :: Types.Difficulty -> Types.Difficulty
+  {- Strictness: x -}
+00f20b769b8fe2291be2b3ea2ee8842e
+  changeDifficulty3 :: Graphics.UI.GLFW.Types.Key -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (key :: Graphics.UI.GLFW.Types.Key) ->
+                 case key of x1 {
+                   DEFAULT -> GHC.Types.False
+                   Graphics.UI.GLFW.Types.Key'Down -> GHC.Types.True
+                   Graphics.UI.GLFW.Types.Key'Up -> GHC.Types.True }) -}
+1a119b438972183cf9f4cc5a6c973dba
+  clearWeebs :: Types.GameState -> Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S,1*U(U,1*U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ->
+                 Types.GameState
+                   ds
+                   (GHC.Base.build
+                      @ Types.Weeb
+                      (\ @ b (c :: Types.Weeb -> b -> b)[OneShot] (n :: b)[OneShot] ->
+                       GHC.Base.foldr
+                         @ Types.Weeb
+                         @ b
+                         (GHC.List.filterFB @ Types.Weeb @ b c Game.clearWeebs1)
+                         n
+                         ds1))
+                   ds2
+                   ds3
+                   ds4
+                   ds5
+                   ds6
+                   ds7
+                   ds8
+                   ds9
+                   ds10
+                   ds11 }) -}
+fd73129db2714341db2c8ce5d3b88426
+  clearWeebs1 :: Types.Weeb -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLS(S)L),1*U(A,A,A,1*U(U),A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Weeb) ->
+                 case ds of wild { Types.Weeb ds1 ds2 ds3 dead ds4 ->
+                 case dead of wild1 { GHC.Types.F# x ->
+                 GHC.Prim.tagToEnum#
+                   @ GHC.Types.Bool
+                   (GHC.Prim.gtFloat# x 0.0#) } }) -}
+ef74b41a36434802d46a51dfc55f7442
+  cycleDifficultyDown :: Types.Difficulty -> Types.Difficulty
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Difficulty) ->
+                 case ds of wild {
+                   Types.Easy -> Types.Extreme
+                   Types.Medium -> Types.Easy
+                   Types.Hard -> Types.Medium
+                   Types.Extreme -> Types.Hard }) -}
+9f5b19dddd7ea42646f786de24a5aeee
+  cycleDifficultyUp :: Types.Difficulty -> Types.Difficulty
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Difficulty) ->
+                 case ds of wild {
+                   Types.Easy -> Types.Medium
+                   Types.Medium -> Types.Hard
+                   Types.Hard -> Types.Extreme
+                   Types.Extreme -> Types.Easy }) -}
+e7750b5d8bd957eb197e3ea67ab23587
+  exitGame :: Types.GameState -> Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S,1*U(U(U,U,U,U,U,U),U,U,U,U,U,U,U,U,U,A,U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ->
+                 Types.GameState
+                   ds
+                   ds1
+                   ds2
+                   ds3
+                   ds4
+                   ds5
+                   ds6
+                   ds7
+                   ds8
+                   ds9
+                   (case ds of wild1 { Types.Player ds12 ds13 ds14 ds15 ds16 ds17 ->
+                    GHC.List.elem
+                      @ Graphics.UI.GLFW.Types.Key
+                      Graphics.UI.GLFW.Types.$fEqKey
+                      Graphics.UI.GLFW.Types.Key'Escape
+                      ds15 })
+                   ds11 }) -}
+590e854c598147978de6d6dcb8fa615a
+  fall ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState -> Types.GameState
+  {- Arity: 2,
+     Strictness: <L,1*U><S,1*U(1*U(U(U,U(U)),1*U(U),U,U,U,U),U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ->
+                 Types.GameState
+                   (case ds of wild1 { Types.Player ds12 ds13 ds14 ds15 ds16 ds17 ->
+                    Types.Player
+                      ds12
+                      (case ds12 of wild2 { (,) ds18 y ->
+                       case y of wild3 { GHC.Types.F# x ->
+                       case GHC.Prim.leFloat# x 0.0# of lwild {
+                         DEFAULT
+                         -> case GHC.Real.$w$s$c/
+                                   timeDiff
+                                     `cast`
+                                   (Data.Time.Clock.Internal.NominalDiffTime.N:NominalDiffTime[0] ; Data.Fixed.N:Fixed[0]
+                                                                                                        <Data.Fixed.E12>_P)
+                                   GHC.Real.$fEnumRatio1
+                                   Data.Fixed.$fHasResolutionE5
+                                   GHC.Real.$fEnumRatio1 of ww { (#,#) ww1 ww2 ->
+                            case GHC.Float.rationalToFloat
+                                   ww1
+                                   ww2 of wild4 { GHC.Types.F# y1 ->
+                            case ds13 of wild5 { GHC.Types.F# y2 ->
+                            GHC.Types.F#
+                              (GHC.Prim.plusFloat# (GHC.Prim.timesFloat# -1440.0# y1) y2) } } }
+                         1# -> ds13 } } })
+                      ds14
+                      ds15
+                      ds16
+                      ds17 })
+                   ds1
+                   ds2
+                   ds3
+                   ds4
+                   ds5
+                   ds6
+                   ds7
+                   ds8
+                   ds9
+                   ds10
+                   ds11 }) -}
+4033d60b2f067fbd3c0778e823363d62
+  groundVelocityReset :: Types.GameState -> Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(S(S(LS(S))LLLLL)LLLLLLLLLLL),1*U(U(U(U,U(U)),U(U),U,U,U,U),U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: (\ (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 case ds1 of wild1 { Types.Player ds16 ds17 ds18 ds19 ds20 ds21 ->
+                 case ds16 of wild2 { (,) ds y ->
+                 case y of wild3 { GHC.Types.F# x ->
+                 case GHC.Prim.leFloat# x 0.0# of lwild {
+                   DEFAULT
+                   -> case {__pkg_ccall base-4.11.1.0 GHC.Prim.Float#
+                                                      -> GHC.Prim.State# GHC.Prim.RealWorld
+                                                      -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                                            GHC.Prim.Float# #)}
+                             144.0#
+                             GHC.Prim.realWorld# of wild4 { (#,#) ds22 ds23 ->
+                      case GHC.Prim.geFloat#
+                             x
+                             (GHC.Prim.int2Float#
+                                (GHC.Prim.-# 720# (GHC.Prim.float2Int# ds23))) of lwild1 {
+                        DEFAULT -> wild
+                        1#
+                        -> case ds17 of wild5 { GHC.Types.F# x1 ->
+                           case GHC.Prim.gtFloat# x1 0.0# of lwild2 {
+                             DEFAULT -> wild
+                             1#
+                             -> Types.GameState
+                                  (Types.Player wild2 Game.groundVelocityReset1 ds18 ds19 ds20 ds21)
+                                  ds2
+                                  ds3
+                                  ds4
+                                  ds5
+                                  ds6
+                                  ds7
+                                  ds8
+                                  ds9
+                                  ds10
+                                  ds11
+                                  ds12 } } } }
+                   1#
+                   -> Types.GameState
+                        (Types.Player wild2 Game.groundVelocityReset1 ds18 ds19 ds20 ds21)
+                        ds2
+                        ds3
+                        ds4
+                        ds5
+                        ds6
+                        ds7
+                        ds8
+                        ds9
+                        ds10
+                        ds11
+                        ds12 } } } } }) -}
+260b984dbd7c565473d7825e73705d36
+  groundVelocityReset1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.0#) -}
+53a2395f51edf4fb6880bcbbbe60cff2
+  hammerHitPoint ::
+    Types.GameState -> (GHC.Types.Float, GHC.Types.Float)
+  {- Arity: 1,
+     Strictness: <L,U(U(U(U(U),U(U)),A,U,A,A,A),A,U(U),A,A,A,A,A,A,A,A,A)>m,
+     Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Types.GameState) ->
+                 case Game.$whammerHitPoint w of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+e87a88ae82a9dde0821b1bb4011f0382
+  hammerPosition ::
+    Types.GameState -> (GHC.Types.Float, GHC.Types.Float)
+  {- Arity: 1,
+     Strictness: <L,U(U(U(U(U),U(U)),A,U,A,A,A),A,U(U),A,A,A,A,A,A,A,A,A)>m,
+     Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Types.GameState) ->
+                 case Game.$whammerPosition w of ww { (#,#) ww1 ww2 ->
+                 (ww1, ww2) }) -}
+664e8bbc608845bb3bddb28485d2a496
+  hammerSmack :: Types.GameState -> Types.GameState
+  {- Arity: 1,
+     Strictness: <S(LLLSLLLLLLLL),1*U(U(U(U(U),U(U)),U,U,U,U,U),U,U(U),U,U,U,U(U),U,U,U,U,U)>,
+     Unfolding: (\ (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 case ds4 of wild1 {
+                   GHC.Base.Nothing -> wild
+                   GHC.Base.Just a1
+                   -> case a1 of wild2 {
+                        Types.SwingUp -> wild
+                        Types.SwingDown
+                        -> let {
+                             ds :: [Types.Weeb]
+                             = let {
+                                 lvl2 :: (GHC.Types.Float, GHC.Types.Float)
+                                 = case Game.$whammerHitPoint wild of ww { (#,#) ww1 ww2 ->
+                                   (ww1, ww2) }
+                               } in
+                               GHC.Base.map
+                                 @ Types.Weeb
+                                 @ Types.Weeb
+                                 (\ (weeb :: Types.Weeb) ->
+                                  case weeb of wild3 { Types.Weeb pos animation action dead alive ->
+                                  case lvl2 of wild4 { (,) px py ->
+                                  case px of wild5 { GHC.Types.F# x ->
+                                  case pos of wild6 { (,) minX minY ->
+                                  case minX of wild7 { GHC.Types.F# y ->
+                                  case GHC.Prim.geFloat# x y of lwild {
+                                    DEFAULT -> wild3
+                                    1#
+                                    -> case GHC.Prim.leFloat#
+                                              x
+                                              (GHC.Prim.plusFloat# y 95.68107#) of lwild1 {
+                                         DEFAULT -> wild3
+                                         1#
+                                         -> case py of wild8 { GHC.Types.F# x1 ->
+                                            case minY of wild9 { GHC.Types.F# y1 ->
+                                            case GHC.Prim.geFloat# x1 y1 of lwild2 {
+                                              DEFAULT -> wild3
+                                              1#
+                                              -> case GHC.Prim.leFloat#
+                                                        x1
+                                                        (GHC.Prim.plusFloat#
+                                                           y1
+                                                           102.85715#) of lwild3 {
+                                                   DEFAULT -> wild3
+                                                   1#
+                                                   -> case action of wild10 {
+                                                        Types.Normal
+                                                        -> Types.Weeb
+                                                             wild6
+                                                             animation
+                                                             Types.Dead
+                                                             Constants.deadTimer
+                                                             alive
+                                                        Types.Dead -> wild3 } } } } } } } } } } } })
+                                 ds2
+                           } in
+                           Types.GameState
+                             ds1
+                             ds
+                             ds3
+                             wild1
+                             ds5
+                             ds6
+                             (case ds7 of wild3 { GHC.Types.I# x ->
+                              case Game.$wgo ds 0# of ww { DEFAULT ->
+                              GHC.Types.I# (GHC.Prim.+# x ww) } })
+                             ds8
+                             ds9
+                             ds10
+                             ds11
+                             ds12 } } }) -}
+56ad109ce8d788f9a66d77e8aa4f9998
+  isInHitbox :: Types.Position -> Types.Weeb -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(S(S)L),1*U(1*U(U),1*U(U))><S(S(S(S)L)LLLL),1*U(1*U(1*U(U),1*U(U)),A,A,A,A)>,
+     Inline: [0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Types.Position) (w1 :: Types.Weeb) ->
+                 case w of ww { (,) ww1 ww2 ->
+                 case ww1 of ww3 { GHC.Types.F# ww4 ->
+                 case w1 of ww5 { Types.Weeb ww6 ww7 ww8 ww9 ww10 ->
+                 case ww6 of ww11 { (,) ww12 ww13 ->
+                 case ww12 of ww14 { GHC.Types.F# ww15 ->
+                 Game.$wisInHitbox ww4 ww2 ww15 ww13 } } } } }) -}
+8b162d0ac2840eb630499992e3381d12
+  jump :: Types.GameState -> Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(S(LLLSLL)LLLLLLLLLLL),1*U(U(U(U,U(U)),U(U),U,U,U,U),U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: (\ (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 case ds1 of wild1 { Types.Player ds16 ds17 ds18 ds19 ds20 ds21 ->
+                 case GHC.List.elem
+                        @ Graphics.UI.GLFW.Types.Key
+                        Graphics.UI.GLFW.Types.$fEqKey
+                        Graphics.UI.GLFW.Types.Key'W
+                        ds19 of wild2 {
+                   GHC.Types.False -> wild
+                   GHC.Types.True
+                   -> case ds16 of wild3 { (,) ds y ->
+                      case y of wild4 { GHC.Types.F# x ->
+                      case GHC.Prim.leFloat# x 0.0# of lwild {
+                        DEFAULT -> wild
+                        1#
+                        -> Types.GameState
+                             (Types.Player
+                                wild3
+                                (case ds17 of wild5 { GHC.Types.F# x1 ->
+                                 GHC.Types.F# (GHC.Prim.plusFloat# x1 1200.0#) })
+                                ds18
+                                ds19
+                                ds20
+                                ds21)
+                             ds2
+                             ds3
+                             ds4
+                             ds5
+                             ds6
+                             ds7
+                             ds8
+                             ds9
+                             ds10
+                             ds11
+                             ds12 } } } } } }) -}
+84bde984ff9ab65aa18ba7cdd9ac61cb
+  killWeebs :: Types.GameState -> Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S,1*U(U,U,U,U,U,U,U,1*U(U),U,U,U,U)>,
+     Unfolding: (\ (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ->
+                 Types.GameState
+                   ds
+                   (GHC.List.filter @ Types.Weeb Game.killWeebs1 ds1)
+                   ds2
+                   ds3
+                   ds4
+                   ds5
+                   ds6
+                   (case ds7 of wild1 { GHC.Types.I# x ->
+                    case Game.$wgo1 ds1 0# of ww { DEFAULT ->
+                    GHC.Types.I# (GHC.Prim.-# x ww) } })
+                   ds8
+                   ds9
+                   ds10
+                   ds11 }) -}
+f212a58603460a8203b959c567d6165a
+  killWeebs1 :: Types.Weeb -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLS(S)),1*U(A,A,A,A,1*U(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Types.Weeb) ->
+                 case ds of wild { Types.Weeb ds1 ds2 ds3 ds4 alive ->
+                 case alive of wild1 { GHC.Types.F# x ->
+                 GHC.Prim.tagToEnum#
+                   @ GHC.Types.Bool
+                   (GHC.Prim.gtFloat# x 0.0#) } }) -}
+7d7eda5358b5315788d9ff7e4b4985d8
+  moveHammer ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState -> Types.GameState
+  {- Arity: 2,
+     Strictness: <L,1*U><S,1*U(U,U,1*U(U),1*U,U,U,U,U,U,U,U,U)>,
+     Unfolding: (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ->
+                 let {
+                   ds12 :: (GHC.Base.Maybe Types.SwingDirection, GHC.Types.Float)
+                   = case ds3 of wild1 {
+                       GHC.Base.Nothing -> Game.moveHammer4
+                       GHC.Base.Just ds13
+                       -> case ds2 of wild2 { GHC.Types.F# x ->
+                          case ds13 of wild3 {
+                            Types.SwingUp
+                            -> case Constants.swingSpeed of wild4 { GHC.Types.F# x1 ->
+                               case GHC.Real.$w$s$c/
+                                      timeDiff
+                                        `cast`
+                                      (Data.Time.Clock.Internal.NominalDiffTime.N:NominalDiffTime[0] ; Data.Fixed.N:Fixed[0]
+                                                                                                           <Data.Fixed.E12>_P)
+                                      GHC.Real.$fEnumRatio1
+                                      Data.Fixed.$fHasResolutionE5
+                                      GHC.Real.$fEnumRatio1 of ww { (#,#) ww1 ww2 ->
+                               case GHC.Float.rationalToFloat ww1 ww2 of wild5 { GHC.Types.F# y ->
+                               case Constants.hammerMaxAngle of wild6 { GHC.Types.F# y1 ->
+                               let {
+                                 ww4 :: GHC.Prim.Float#
+                                 = GHC.Prim.plusFloat# x (GHC.Prim.timesFloat# x1 y)
+                               } in
+                               case GHC.Prim.geFloat# ww4 y1 of lwild {
+                                 DEFAULT -> (Game.moveHammer3, GHC.Types.F# ww4)
+                                 1# -> Game.moveHammer4 } } } } }
+                            Types.SwingDown
+                            -> case Game.moveHammer2 of wild4 { GHC.Types.F# x1 ->
+                               case GHC.Real.$w$s$c/
+                                      timeDiff
+                                        `cast`
+                                      (Data.Time.Clock.Internal.NominalDiffTime.N:NominalDiffTime[0] ; Data.Fixed.N:Fixed[0]
+                                                                                                           <Data.Fixed.E12>_P)
+                                      GHC.Real.$fEnumRatio1
+                                      Data.Fixed.$fHasResolutionE5
+                                      GHC.Real.$fEnumRatio1 of ww { (#,#) ww1 ww2 ->
+                               case GHC.Float.rationalToFloat ww1 ww2 of wild5 { GHC.Types.F# y ->
+                               let {
+                                 ww4 :: GHC.Prim.Float#
+                                 = GHC.Prim.plusFloat# x (GHC.Prim.timesFloat# x1 y)
+                               } in
+                               case GHC.Prim.leFloat# ww4 0.0# of lwild {
+                                 DEFAULT -> (Game.moveHammer1, GHC.Types.F# ww4)
+                                 1#
+                                 -> (Game.moveHammer3,
+                                     GHC.Types.F# (GHC.Prim.negateFloat# ww4)) } } } } } } }
+                 } in
+                 Types.GameState
+                   ds
+                   ds1
+                   (case ds12 of wild1 { (,) swingDirection' angle' -> angle' })
+                   (case ds12 of wild1 { (,) swingDirection' angle' ->
+                    swingDirection' })
+                   ds4
+                   ds5
+                   ds6
+                   ds7
+                   ds8
+                   ds9
+                   ds10
+                   ds11 }) -}
+a8ef5e98b4d51476212bab50c151fe6b
+  moveHammer1 :: GHC.Base.Maybe Types.SwingDirection
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just
+                   @ Types.SwingDirection
+                   Types.SwingDown) -}
+5d418b6ff902e09229b62895a9aeeddf
+  moveHammer2 :: GHC.Types.Float
+  {- Unfolding: (case Constants.swingSpeed of wild { GHC.Types.F# x ->
+                 GHC.Types.F# (GHC.Prim.negateFloat# x) }) -}
+842a24d72146d5db56c521072acf8a5c
+  moveHammer3 :: GHC.Base.Maybe Types.SwingDirection
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Base.Just @ Types.SwingDirection Types.SwingUp) -}
+8bcfca9c19e7e55e8b99f0c7840756ea
+  moveHammer4 ::
+    (GHC.Base.Maybe Types.SwingDirection, GHC.Types.Float)
+  {- Strictness: m,
+     Unfolding: ((GHC.Base.Nothing @ Types.SwingDirection,
+                  Constants.hammerMaxAngle)) -}
+458579da41d41467316559d39b1d4f8f
+  moveLeft ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState -> Types.GameState
+  {- Arity: 2,
+     Strictness: <L,1*U><S(S(LLLSLL)LLLLLLLLLLL),1*U(U(U(U(U),U(U)),U,U,U,U,U),U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 case ds1 of wild1 { Types.Player ds16 ds17 ds18 ds19 ds20 ds21 ->
+                 case GHC.List.elem
+                        @ Graphics.UI.GLFW.Types.Key
+                        Graphics.UI.GLFW.Types.$fEqKey
+                        Graphics.UI.GLFW.Types.Key'A
+                        ds19 of wild2 {
+                   GHC.Types.False -> wild
+                   GHC.Types.True
+                   -> let {
+                        y :: GHC.Types.Float = case ds16 of wild3 { (,) x y1 -> y1 }
+                      } in
+                      Types.GameState
+                        (Types.Player
+                           (case ds16 of wild3 { (,) x y1 ->
+                            case x of wild4 { GHC.Types.F# x1 ->
+                            case GHC.Real.$w$s$c/
+                                   timeDiff
+                                     `cast`
+                                   (Data.Time.Clock.Internal.NominalDiffTime.N:NominalDiffTime[0] ; Data.Fixed.N:Fixed[0]
+                                                                                                        <Data.Fixed.E12>_P)
+                                   GHC.Real.$fEnumRatio1
+                                   Data.Fixed.$fHasResolutionE5
+                                   GHC.Real.$fEnumRatio1 of ww { (#,#) ww1 ww2 ->
+                            case GHC.Float.rationalToFloat
+                                   ww1
+                                   ww2 of wild5 { GHC.Types.F# y2 ->
+                            GHC.Types.F#
+                              (GHC.Prim.plusFloat# x1 (GHC.Prim.timesFloat# -512.0# y2)) } } } },
+                            y)
+                           ds17
+                           Types.Left
+                           ds19
+                           (case y of wild3 { GHC.Types.F# x ->
+                            case GHC.Prim.leFloat# x 0.0# of lwild {
+                              DEFAULT -> ds20 1# -> Game.moveLeft1 } })
+                           ds21)
+                        ds2
+                        ds3
+                        ds4
+                        ds5
+                        ds6
+                        ds7
+                        ds8
+                        ds9
+                        ds10
+                        ds11
+                        ds12 } } }) -}
+b292986981d410c4c7b0adbbaf0895e7
+  moveLeft1 :: Types.Action
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Types.Running Types.Left) -}
+d86468125a0f4865e17ddf4dc224344d
+  moveRight ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState -> Types.GameState
+  {- Arity: 2,
+     Strictness: <L,1*U><S(S(LLLSLL)LLLLLLLLLLL),1*U(U(U(U(U),U(U)),U,U,U,U,U),U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 case ds1 of wild1 { Types.Player ds16 ds17 ds18 ds19 ds20 ds21 ->
+                 case GHC.List.elem
+                        @ Graphics.UI.GLFW.Types.Key
+                        Graphics.UI.GLFW.Types.$fEqKey
+                        Graphics.UI.GLFW.Types.Key'D
+                        ds19 of wild2 {
+                   GHC.Types.False -> wild
+                   GHC.Types.True
+                   -> let {
+                        y :: GHC.Types.Float = case ds16 of wild3 { (,) x y1 -> y1 }
+                      } in
+                      Types.GameState
+                        (Types.Player
+                           (case ds16 of wild3 { (,) x y1 ->
+                            case x of wild4 { GHC.Types.F# x1 ->
+                            case GHC.Real.$w$s$c/
+                                   timeDiff
+                                     `cast`
+                                   (Data.Time.Clock.Internal.NominalDiffTime.N:NominalDiffTime[0] ; Data.Fixed.N:Fixed[0]
+                                                                                                        <Data.Fixed.E12>_P)
+                                   GHC.Real.$fEnumRatio1
+                                   Data.Fixed.$fHasResolutionE5
+                                   GHC.Real.$fEnumRatio1 of ww { (#,#) ww1 ww2 ->
+                            case GHC.Float.rationalToFloat
+                                   ww1
+                                   ww2 of wild5 { GHC.Types.F# y2 ->
+                            GHC.Types.F#
+                              (GHC.Prim.plusFloat# x1 (GHC.Prim.timesFloat# 512.0# y2)) } } } },
+                            y)
+                           ds17
+                           Types.Right
+                           ds19
+                           (case y of wild3 { GHC.Types.F# x ->
+                            case GHC.Prim.leFloat# x 0.0# of lwild {
+                              DEFAULT -> ds20 1# -> Game.moveRight1 } })
+                           ds21)
+                        ds2
+                        ds3
+                        ds4
+                        ds5
+                        ds6
+                        ds7
+                        ds8
+                        ds9
+                        ds10
+                        ds11
+                        ds12 } } }) -}
+20ba1e461f79a39c4ff17ab47d71465b
+  moveRight1 :: Types.Action
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (Types.Running Types.Right) -}
+c2f0b4a521399b5e8b686c9651971038
+  moveVertical ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState -> Types.GameState
+  {- Arity: 2,
+     Strictness: <L,1*U><S,1*U(1*U(U(1*U,1*U(U)),U(U),U,U,1*U,U),U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ->
+                 Types.GameState
+                   (case ds of wild1 { Types.Player ds12 ds13 ds14 ds15 ds16 ds17 ->
+                    Types.Player
+                      (case ds12 of wild2 { (,) x y -> x },
+                       case ds12 of wild2 { (,) x y ->
+                       case y of wild3 { GHC.Types.F# x1 ->
+                       case ds13 of wild4 { GHC.Types.F# x2 ->
+                       case GHC.Real.$w$s$c/
+                              timeDiff
+                                `cast`
+                              (Data.Time.Clock.Internal.NominalDiffTime.N:NominalDiffTime[0] ; Data.Fixed.N:Fixed[0]
+                                                                                                   <Data.Fixed.E12>_P)
+                              GHC.Real.$fEnumRatio1
+                              Data.Fixed.$fHasResolutionE5
+                              GHC.Real.$fEnumRatio1 of ww { (#,#) ww1 ww2 ->
+                       case GHC.Float.rationalToFloat
+                              ww1
+                              ww2 of wild5 { GHC.Types.F# y1 ->
+                       GHC.Types.F#
+                         (GHC.Prim.plusFloat# x1 (GHC.Prim.timesFloat# x2 y1)) } } } } })
+                      ds13
+                      ds14
+                      ds15
+                      (case ds13 of wild2 { GHC.Types.F# x ->
+                       case GHC.Prim.ltFloat# x 0.0# of lwild {
+                         DEFAULT
+                         -> case GHC.Prim.gtFloat# x 0.0# of lwild1 {
+                              DEFAULT -> ds16 1# -> Types.Running ds14 }
+                         1# -> Types.Falling ds14 } })
+                      ds17 })
+                   ds1
+                   ds2
+                   ds3
+                   ds4
+                   ds5
+                   ds6
+                   ds7
+                   ds8
+                   ds9
+                   ds10
+                   ds11 }) -}
+cd9a8c0fbe67ae1b70d99d858b815a97
+  outOfMap :: Types.GameState -> Types.GameState
+  {- Arity: 1,
+     Strictness: <S(S(S(S(S)L)LLLLL)LLLLLLLLLLL),1*U(U(U(U(U),U(U)),U,U,U,U,U),U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: (\ (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 case ds1 of wild1 { Types.Player ds16 ds17 ds18 ds19 ds20 ds21 ->
+                 case ds16 of wild2 { (,) x y ->
+                 case x of wild3 { GHC.Types.F# x1 ->
+                 case GHC.Prim.ltFloat# x1 0.0# of lwild {
+                   DEFAULT
+                   -> case Game.outOfMap_rightBound of wild4 { GHC.Types.F# y1 ->
+                      case GHC.Prim.gtFloat# x1 y1 of lwild1 {
+                        DEFAULT
+                        -> case y of wild5 { GHC.Types.F# x2 ->
+                           case GHC.Prim.ltFloat# x2 0.0# of lwild2 {
+                             DEFAULT
+                             -> case Game.outOfMap_topBound of wild6 { GHC.Types.F# y2 ->
+                                case GHC.Prim.gtFloat# x2 y2 of lwild3 {
+                                  DEFAULT -> wild
+                                  1#
+                                  -> Types.GameState
+                                       (Types.Player (wild3, wild6) ds17 ds18 ds19 ds20 ds21)
+                                       ds2
+                                       ds3
+                                       ds4
+                                       ds5
+                                       ds6
+                                       ds7
+                                       ds8
+                                       ds9
+                                       ds10
+                                       ds11
+                                       ds12 } }
+                             1#
+                             -> Types.GameState
+                                  (Types.Player
+                                     (wild3, Game.groundVelocityReset1)
+                                     ds17
+                                     ds18
+                                     ds19
+                                     ds20
+                                     ds21)
+                                  ds2
+                                  ds3
+                                  ds4
+                                  ds5
+                                  ds6
+                                  ds7
+                                  ds8
+                                  ds9
+                                  ds10
+                                  ds11
+                                  ds12 } }
+                        1#
+                        -> Types.GameState
+                             (Types.Player (wild4, y) ds17 ds18 ds19 ds20 ds21)
+                             ds2
+                             ds3
+                             ds4
+                             ds5
+                             ds6
+                             ds7
+                             ds8
+                             ds9
+                             ds10
+                             ds11
+                             ds12 } }
+                   1#
+                   -> Types.GameState
+                        (Types.Player
+                           (Game.groundVelocityReset1, y)
+                           ds17
+                           ds18
+                           ds19
+                           ds20
+                           ds21)
+                        ds2
+                        ds3
+                        ds4
+                        ds5
+                        ds6
+                        ds7
+                        ds8
+                        ds9
+                        ds10
+                        ds11
+                        ds12 } } } } }) -}
+d74e5484f9f0ab5527f4b59bb67bd662
+  outOfMap_rightBound :: GHC.Types.Float
+  {- Unfolding: (case {__pkg_ccall base-4.11.1.0 GHC.Prim.Float#
+                                                 -> GHC.Prim.State# GHC.Prim.RealWorld
+                                                 -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                                       GHC.Prim.Float# #)}
+                        86.53847#
+                        GHC.Prim.realWorld# of wild { (#,#) ds2 ds3 ->
+                 GHC.Types.F#
+                   (GHC.Prim.int2Float#
+                      (GHC.Prim.-# 1280# (GHC.Prim.float2Int# ds3))) }) -}
+bef847fe37570cbf283cb134a6cbd517
+  outOfMap_topBound :: GHC.Types.Float
+  {- Unfolding: (case {__pkg_ccall base-4.11.1.0 GHC.Prim.Float#
+                                                 -> GHC.Prim.State# GHC.Prim.RealWorld
+                                                 -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                                       GHC.Prim.Float# #)}
+                        144.0#
+                        GHC.Prim.realWorld# of wild { (#,#) ds2 ds3 ->
+                 GHC.Types.F#
+                   (GHC.Prim.int2Float#
+                      (GHC.Prim.-# 720# (GHC.Prim.float2Int# ds3))) }) -}
+06e953450d88a6e5c1f2047ca8190e85
+  spawnWeebs ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState -> GHC.Types.IO Types.GameState
+  {- Arity: 3,
+     Strictness: <L,1*U><L,U(U,U,U,U,U,1*U(U),U,U,U,U,U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Game.spawnWeebs1
+                  `cast`
+                (<Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime>_R
+                 ->_R <Types.GameState>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <Types.GameState>_R)) -}
+735c355b211f92555100a5ad57540355
+  spawnWeebs1 ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Types.GameState #)
+  {- Arity: 3,
+     Strictness: <L,1*U><L,U(U,U,U,U,U,1*U(U),U,U,U,U,U,U)><S,U>,
+     Unfolding: (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (state :: Types.GameState)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld) ->
+                 case System.Random.theStdGen
+                        `cast`
+                      (GHC.IORef.N:IORef[0] <System.Random.StdGen>_N) of wild { GHC.STRef.STRef r# ->
+                 case GHC.Prim.atomicModifyMutVar#
+                        @ GHC.Prim.RealWorld
+                        @ System.Random.StdGen
+                        @ (System.Random.StdGen, GHC.Types.Int)
+                        @ GHC.Types.Int
+                        r#
+                        Game.spawnWeebs4
+                        eta of ds1 { (#,#) ipv ipv1 ->
+                 case ipv1 of b1 { GHC.Types.I# ipv2 ->
+                 case GHC.Prim.atomicModifyMutVar#
+                        @ GHC.Prim.RealWorld
+                        @ System.Random.StdGen
+                        @ (System.Random.StdGen, GHC.Types.Int)
+                        @ GHC.Types.Int
+                        r#
+                        Game.spawnWeebs3
+                        ipv of ds2 { (#,#) ipv3 ipv4 ->
+                 case ipv4 of b2 { GHC.Types.I# ipv5 ->
+                 let {
+                   f :: GHC.Types.Float
+                   = case state of wild1 { Types.GameState ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ->
+                     case ds11 of wild2 {
+                       Types.Easy -> Constants.maxWeebCooldown1
+                       Types.Medium -> Constants.deadTimer
+                       Types.Hard -> Constants.minWeebCooldown2
+                       Types.Extreme -> Constants.minWeebCooldown1 } }
+                 } in
+                 let {
+                   f1 :: GHC.Types.Float
+                   = case state of wild1 { Types.GameState ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ->
+                     case ds11 of wild2 {
+                       Types.Easy -> Constants.maxWeebCooldown3
+                       Types.Medium -> Constants.maxWeebCooldown2
+                       Types.Hard -> Constants.maxWeebCooldown2
+                       Types.Extreme -> Constants.maxWeebCooldown1 } }
+                 } in
+                 let {
+                   f2 :: (GHC.Types.Float, GHC.Types.Float) = (f, f1)
+                 } in
+                 case GHC.Prim.atomicModifyMutVar#
+                        @ GHC.Prim.RealWorld
+                        @ System.Random.StdGen
+                        @ (System.Random.StdGen, GHC.Types.Float)
+                        @ GHC.Types.Float
+                        r#
+                        (\ (a1 :: System.Random.StdGen) ->
+                         case System.Random.$fRandomFloat_$s$crandomR
+                                f2
+                                a1 of wild1 { (,) v g ->
+                         case g of a'1 { System.Random.StdGen ipv6 ipv7 -> (a'1, v) } })
+                        ipv3 of ds3 { (#,#) ipv6 ipv7 ->
+                 case ipv7 of b3 { GHC.Types.F# ipv8 ->
+                 (# ipv6,
+                    case state of wild1 { Types.GameState ds ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ds13 ds14 ->
+                    let {
+                      cooldown' :: GHC.Types.Float
+                      = case ds8 of wild2 { GHC.Types.F# x ->
+                        case GHC.Real.$w$s$c/
+                               timeDiff
+                                 `cast`
+                               (Data.Time.Clock.Internal.NominalDiffTime.N:NominalDiffTime[0] ; Data.Fixed.N:Fixed[0]
+                                                                                                    <Data.Fixed.E12>_P)
+                               GHC.Real.$fEnumRatio1
+                               Data.Fixed.$fHasResolutionE5
+                               GHC.Real.$fEnumRatio1 of ww { (#,#) ww1 ww2 ->
+                        case GHC.Float.rationalToFloat ww1 ww2 of wild3 { GHC.Types.F# y ->
+                        GHC.Types.F# (GHC.Prim.minusFloat# x y) } } }
+                    } in
+                    Types.GameState
+                      ds
+                      (case cooldown' of wild2 { GHC.Types.F# x ->
+                       case GHC.Prim.ltFloat# x 0.0# of lwild {
+                         DEFAULT -> ds4
+                         1#
+                         -> GHC.Types.:
+                              @ Types.Weeb
+                              (Types.Weeb
+                                 (GHC.Types.F# (GHC.Prim.int2Float# ipv2),
+                                  GHC.Types.F# (GHC.Prim.int2Float# ipv5))
+                                 Game.spawnWeebs2
+                                 Types.Normal
+                                 Constants.deadTimer
+                                 Constants.aliveTimer)
+                              ds4 } })
+                      ds5
+                      ds6
+                      ds7
+                      (case cooldown' of wild2 { GHC.Types.F# x ->
+                       case GHC.Prim.ltFloat# x 0.0# of lwild {
+                         DEFAULT -> wild2 1# -> b3 } })
+                      ds9
+                      ds10
+                      ds11
+                      ds12
+                      ds13
+                      ds14 } #) } } } } } } }) -}
+31a93990d758b4372533b30542b38b9a
+  spawnWeebs2 :: (Types.WeebAction, [Types.Frame])
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Types.Normal, GHC.Types.[] @ Types.Frame)) -}
+4d46e516a0b5d7fe02e2f0f4b64f63b2
+  spawnWeebs3 ::
+    System.Random.StdGen -> (System.Random.StdGen, GHC.Types.Int)
+  {- Arity: 1, Strictness: <L,U>m, Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: System.Random.StdGen) ->
+                 case System.Random.$wrandomIvalInteger
+                        @ System.Random.StdGen
+                        @ GHC.Types.Int
+                        System.Random.$fRandomGenStdGen
+                        GHC.Num.$fNumInt
+                        Game.spawnWeebs_w2
+                        Game.spawnWeebs_w1
+                        w of ww2 { (#,#) ww3 ww4 ->
+                 case ww4 of a'1 { System.Random.StdGen ipv ipv1 ->
+                 (a'1, ww3) } }) -}
+bbfad547c691970144f3bfaeaafe5856
+  spawnWeebs4 ::
+    System.Random.StdGen -> (System.Random.StdGen, GHC.Types.Int)
+  {- Arity: 1, Strictness: <L,U>m, Inline: [0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: System.Random.StdGen) ->
+                 case System.Random.$wrandomIvalInteger
+                        @ System.Random.StdGen
+                        @ GHC.Types.Int
+                        System.Random.$fRandomGenStdGen
+                        GHC.Num.$fNumInt
+                        Game.spawnWeebs_w2
+                        Game.spawnWeebs_w4
+                        w of ww2 { (#,#) ww3 ww4 ->
+                 case ww4 of a'1 { System.Random.StdGen ipv ipv1 ->
+                 (a'1, ww3) } }) -}
+4b559c0d577e985dee621c4b3ccb9fd5
+  spawnWeebs_w1 :: GHC.Integer.Type.Integer
+  {- Unfolding: (case {__pkg_ccall base-4.11.1.0 GHC.Prim.Float#
+                                                 -> GHC.Prim.State# GHC.Prim.RealWorld
+                                                 -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                                       GHC.Prim.Float# #)}
+                        102.85715#
+                        GHC.Prim.realWorld# of wild { (#,#) ds2 ds3 ->
+                 GHC.Integer.Type.smallInteger
+                   (GHC.Prim.-# 720# (GHC.Prim.float2Int# ds3)) }) -}
+66c371140333a63966816898bb7e764f
+  spawnWeebs_w2 :: GHC.Integer.Type.Integer
+  {- HasNoCafRefs, Unfolding: (0) -}
+c8a68e31690e7f7361209209c29f12ad
+  spawnWeebs_w4 :: GHC.Integer.Type.Integer
+  {- Unfolding: (case {__pkg_ccall base-4.11.1.0 GHC.Prim.Float#
+                                                 -> GHC.Prim.State# GHC.Prim.RealWorld
+                                                 -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+                                                       GHC.Prim.Float# #)}
+                        95.68107#
+                        GHC.Prim.realWorld# of wild { (#,#) ds2 ds3 ->
+                 GHC.Integer.Type.smallInteger
+                   (GHC.Prim.-# 1280# (GHC.Prim.float2Int# ds3)) }) -}
+8085345dfe81599082831cba0b80d1b0
+  standStill :: Types.GameState -> Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(S(LLLSLL)LLLLLLLLLLL),1*U(U(U(U,U(U)),U,U,U,U,U),U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: (\ (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 case ds1 of wild1 { Types.Player ds16 ds17 ds18 ds19 ds20 ds21 ->
+                 case GHC.List.elem
+                        @ Graphics.UI.GLFW.Types.Key
+                        Graphics.UI.GLFW.Types.$fEqKey
+                        Graphics.UI.GLFW.Types.Key'D
+                        ds19 of wild2 {
+                   GHC.Types.False
+                   -> case GHC.List.elem
+                             @ Graphics.UI.GLFW.Types.Key
+                             Graphics.UI.GLFW.Types.$fEqKey
+                             Graphics.UI.GLFW.Types.Key'A
+                             ds19 of wild3 {
+                        GHC.Types.False
+                        -> case ds16 of wild4 { (,) ds y ->
+                           case y of wild5 { GHC.Types.F# x ->
+                           case GHC.Prim.leFloat# x 0.0# of lwild {
+                             DEFAULT -> wild
+                             1#
+                             -> Types.GameState
+                                  (Types.Player wild4 ds17 ds18 ds19 (Types.Still ds18) ds21)
+                                  ds2
+                                  ds3
+                                  ds4
+                                  ds5
+                                  ds6
+                                  ds7
+                                  ds8
+                                  ds9
+                                  ds10
+                                  ds11
+                                  ds12 } } }
+                        GHC.Types.True -> wild }
+                   GHC.Types.True -> wild } } }) -}
+77d20a9ae75c9dc1d97b4a309f37bf5c
+  swingHammer :: Types.GameState -> Types.GameState
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(S(LLLSLL)LLLLLLLLLLL),1*U(U(U,U,U,U,U,U),U,U,U,U(U),U,U,U,U,U,U,U)>,
+     Unfolding: (\ (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 case ds1 of wild1 { Types.Player ds16 ds17 ds18 ds19 ds20 ds21 ->
+                 case GHC.List.elem
+                        @ Graphics.UI.GLFW.Types.Key
+                        Graphics.UI.GLFW.Types.$fEqKey
+                        Graphics.UI.GLFW.Types.Key'Space
+                        ds19 of wild2 {
+                   GHC.Types.False -> wild
+                   GHC.Types.True
+                   -> case ds4 of wild3 {
+                        GHC.Base.Nothing
+                        -> case ds5 of wild4 { GHC.Types.F# x ->
+                           case GHC.Prim.eqFloat# x 0.0# of lwild {
+                             DEFAULT -> wild
+                             1#
+                             -> Types.GameState
+                                  wild1
+                                  ds2
+                                  ds3
+                                  Game.moveHammer1
+                                  Game.swingHammer1
+                                  ds6
+                                  ds7
+                                  ds8
+                                  ds9
+                                  ds10
+                                  ds11
+                                  ds12 } }
+                        GHC.Base.Just a1 -> wild } } } }) -}
+a92feeccb1fdd641074064bdcd3d1003
+  swingHammer1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.4#) -}
+f229633724679b6a49ee8adf07635fca
+  updateDiffCooldown ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState -> Types.GameState
+  {- Arity: 2,
+     Strictness: <L,1*U><S,1*U(U,U,U,U,U,U,U,U,U,1*U(U),U,U)>,
+     Unfolding: (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ->
+                 Types.GameState
+                   ds
+                   ds1
+                   ds2
+                   ds3
+                   ds4
+                   ds5
+                   ds6
+                   ds7
+                   ds8
+                   (case ds9 of wild1 { GHC.Types.F# x ->
+                    case GHC.Real.$w$s$c/
+                           timeDiff
+                             `cast`
+                           (Data.Time.Clock.Internal.NominalDiffTime.N:NominalDiffTime[0] ; Data.Fixed.N:Fixed[0]
+                                                                                                <Data.Fixed.E12>_P)
+                           GHC.Real.$fEnumRatio1
+                           Data.Fixed.$fHasResolutionE5
+                           GHC.Real.$fEnumRatio1 of ww { (#,#) ww1 ww2 ->
+                    case GHC.Float.rationalToFloat ww1 ww2 of wild2 { GHC.Types.F# y ->
+                    let {
+                      x1 :: GHC.Prim.Float# = GHC.Prim.minusFloat# x y
+                    } in
+                    case GHC.Prim.geFloat# x1 0.0# of lwild {
+                      DEFAULT -> Game.groundVelocityReset1 1# -> GHC.Types.F# x1 } } } })
+                   ds10
+                   ds11 }) -}
+d76543809bd290a04560acf8a657466f
+  updateGameState ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState -> GHC.Types.IO Types.GameState
+  {- Arity: 3,
+     Strictness: <L,U><L,1*U(U(U(U(U),U(U)),U,U,U,U,U),U,U,U,U,U,U,U,U,U,U,U)><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Game.updateGameState1
+                  `cast`
+                (<Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime>_R
+                 ->_R <Types.GameState>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <Types.GameState>_R)) -}
+86c79a21f552e2f677a24080d8352121
+  updateGameState1 ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, Types.GameState #)
+  {- Arity: 3,
+     Strictness: <L,U><L,1*U(U(U(U(U),U(U)),U,U,U,U,U),U,U,U,U,U,U,U,U,U,U,U)><S,U> -}
+8a66fd16465955256fbdab4b2967dd30
+  updateHammerCooldown ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState -> Types.GameState
+  {- Arity: 2,
+     Strictness: <L,1*U><S(LLLSLLLLLLLL),1*U(U,U,U,U,U(U),U,U,U,U,U,U,U)>,
+     Unfolding: (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ds12 ->
+                 case ds4 of wild1 {
+                   GHC.Base.Nothing
+                   -> Types.GameState
+                        ds1
+                        ds2
+                        ds3
+                        (GHC.Base.Nothing @ Types.SwingDirection)
+                        (case ds5 of wild2 { GHC.Types.F# x ->
+                         case GHC.Real.$w$s$c/
+                                timeDiff
+                                  `cast`
+                                (Data.Time.Clock.Internal.NominalDiffTime.N:NominalDiffTime[0] ; Data.Fixed.N:Fixed[0]
+                                                                                                     <Data.Fixed.E12>_P)
+                                GHC.Real.$fEnumRatio1
+                                Data.Fixed.$fHasResolutionE5
+                                GHC.Real.$fEnumRatio1 of ww { (#,#) ww1 ww2 ->
+                         case GHC.Float.rationalToFloat ww1 ww2 of wild3 { GHC.Types.F# y ->
+                         let {
+                           x1 :: GHC.Prim.Float# = GHC.Prim.minusFloat# x y
+                         } in
+                         case GHC.Prim.geFloat# x1 0.0# of lwild {
+                           DEFAULT -> Game.groundVelocityReset1 1# -> GHC.Types.F# x1 } } } })
+                        ds6
+                        ds7
+                        ds8
+                        ds9
+                        ds10
+                        ds11
+                        ds12
+                   GHC.Base.Just a1 -> wild } }) -}
+9ecc59a96371a760a789ea7047d3fe53
+  updateWeebAliveTimer ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState -> Types.GameState
+  {- Arity: 2, Strictness: <L,1*U><S,1*U(U,1*U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ->
+                 Types.GameState
+                   ds
+                   (let {
+                      lvl2 :: GHC.Types.Float
+                      = case GHC.Real.$w$s$c/
+                               timeDiff
+                                 `cast`
+                               (Data.Time.Clock.Internal.NominalDiffTime.N:NominalDiffTime[0] ; Data.Fixed.N:Fixed[0]
+                                                                                                    <Data.Fixed.E12>_P)
+                               GHC.Real.$fEnumRatio1
+                               Data.Fixed.$fHasResolutionE5
+                               GHC.Real.$fEnumRatio1 of ww { (#,#) ww1 ww2 ->
+                        GHC.Float.rationalToFloat ww1 ww2 }
+                    } in
+                    GHC.Base.map
+                      @ Types.Weeb
+                      @ Types.Weeb
+                      (\ (weeb :: Types.Weeb) ->
+                       case weeb of wild1 { Types.Weeb pos animation action dead alive ->
+                       case action of wild2 {
+                         Types.Normal
+                         -> Types.Weeb
+                              pos
+                              animation
+                              Types.Normal
+                              dead
+                              (case alive of wild3 { GHC.Types.F# x ->
+                               case lvl2 of wild4 { GHC.Types.F# y ->
+                               GHC.Types.F# (GHC.Prim.minusFloat# x y) } })
+                         Types.Dead -> wild1 } })
+                      ds1)
+                   ds2
+                   ds3
+                   ds4
+                   ds5
+                   ds6
+                   ds7
+                   ds8
+                   ds9
+                   ds10
+                   ds11 }) -}
+0e59493b0c18c72b6853b58f38a46d25
+  updateWeebDeadTimer ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState -> Types.GameState
+  {- Arity: 2, Strictness: <L,1*U><S,1*U(U,1*U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (state :: Types.GameState) ->
+                 case state of wild { Types.GameState ds ds1 ds2 ds3 ds4 ds5 ds6 ds7 ds8 ds9 ds10 ds11 ->
+                 Types.GameState
+                   ds
+                   (let {
+                      lvl2 :: GHC.Types.Float
+                      = case GHC.Real.$w$s$c/
+                               timeDiff
+                                 `cast`
+                               (Data.Time.Clock.Internal.NominalDiffTime.N:NominalDiffTime[0] ; Data.Fixed.N:Fixed[0]
+                                                                                                    <Data.Fixed.E12>_P)
+                               GHC.Real.$fEnumRatio1
+                               Data.Fixed.$fHasResolutionE5
+                               GHC.Real.$fEnumRatio1 of ww { (#,#) ww1 ww2 ->
+                        GHC.Float.rationalToFloat ww1 ww2 }
+                    } in
+                    GHC.Base.map
+                      @ Types.Weeb
+                      @ Types.Weeb
+                      (\ (weeb :: Types.Weeb) ->
+                       case weeb of wild1 { Types.Weeb pos animation action dead alive ->
+                       case action of wild2 {
+                         Types.Normal -> wild1
+                         Types.Dead
+                         -> Types.Weeb
+                              pos
+                              animation
+                              Types.Dead
+                              (case dead of wild3 { GHC.Types.F# x ->
+                               case lvl2 of wild4 { GHC.Types.F# y ->
+                               GHC.Types.F# (GHC.Prim.minusFloat# x y) } })
+                              alive } })
+                      ds1)
+                   ds2
+                   ds3
+                   ds4
+                   ds5
+                   ds6
+                   ds7
+                   ds8
+                   ds9
+                   ds10
+                   ds11 }) -}
+dd592bdb03aa70d189dc223a716d52ab
+  updateWeebTimers ::
+    Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime
+    -> Types.GameState -> Types.GameState
+  {- Arity: 2, Strictness: <L,U><S,1*U(U,1*U,U,U,U,U,U,U,U,U,U,U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (timeDiff :: Data.Time.Clock.Internal.NominalDiffTime.NominalDiffTime)
+                   (x :: Types.GameState) ->
+                 Game.updateWeebDeadTimer
+                   timeDiff
+                   (Game.updateWeebAliveTimer timeDiff x)) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -43,7 +43,10 @@ isInHitbox (px,py) weeb = (px >= minX && px <= maxX) && (py >= minY && py <= max
 
 updateGameState :: NominalDiffTime -> GameState -> IO GameState
 updateGameState timeDiff state = (return $
-                               ( clearWeebs
+                               ( updateDiffCooldown timeDiff
+                               . changeDifficulty
+                               . killWeebs
+                               . clearWeebs
                                . updateWeebTimers timeDiff
                                . hammerSmack 
                                . moveHammer timeDiff
@@ -160,8 +163,15 @@ updateHammerCooldown timeDiff state = if (swingDirection state == Nothing) then 
     cooldown = (swingCooldown state) - (realToFrac timeDiff)
     swingCooldown' = if cooldown >= 0 then cooldown else 0
 
+
+updateDiffCooldown :: NominalDiffTime -> GameState -> GameState
+updateDiffCooldown timeDiff state = state { diffCooldown = diffCooldown' }
+  where
+    cooldown = (diffCooldown state) - (realToFrac timeDiff)
+    diffCooldown' = if cooldown >= 0 then cooldown else 0
+
 swingHammer :: GameState -> GameState
-swingHammer state = if keyPressed && (swingDirection state == Nothing) && (swingCooldown state == 0) then state { swingDirection = Just SwingDown, swingCooldown = 0.5 } else state
+swingHammer state = if keyPressed && (swingDirection state == Nothing) && (swingCooldown state == 0) then state { swingDirection = Just SwingDown, swingCooldown = 0.4 } else state
   where
     keyPressed = elem Key'Space $ (pressedKeys . player) state
 
@@ -187,29 +197,70 @@ moveHammer timeDiff state = state { hammerAngle = angle', swingDirection = swing
 hammerSmack :: GameState -> GameState
 hammerSmack state = if swingDirection state == Just SwingDown then state' else state
   where
-    smackWeeb weeb@(Weeb pos animation action dead) =
+    smackWeeb weeb@(Weeb pos animation action dead alive) =
         if (hammerHitPoint state) `isInHitbox` weeb && (weebAction weeb /= Dead)
           then
-            Weeb pos animation Dead deadTimer
+            Weeb pos animation Dead deadTimer alive
           else
             weeb
 
     newState = state { weebs = fmap smackWeeb (weebs state) }
 
-    dPoints = length $ filter (\(Weeb _ _ action dead) -> action == Dead && dead == deadTimer) (weebs newState)
+    dPoints = length $ filter (\(Weeb _ _ action dead _) -> action == Dead && dead == deadTimer) (weebs newState)
 
     state' = newState { points = (points newState) + dPoints}
 
 updateWeebTimers :: NominalDiffTime -> GameState -> GameState
-updateWeebTimers timeDiff state = state { weebs = fmap (weebTimer) (weebs state) }
+updateWeebTimers timeDiff = updateWeebDeadTimer timeDiff . updateWeebAliveTimer timeDiff
+
+updateWeebDeadTimer :: NominalDiffTime -> GameState -> GameState
+updateWeebDeadTimer timeDiff state = state { weebs = fmap (weebTimer) (weebs state) }
   where
-   weebTimer weeb@(Weeb pos animation action dead) = 
+   weebTimer weeb@(Weeb pos animation action dead alive) = 
     if action == Dead
-      then Weeb pos animation action (dead - (realToFrac timeDiff))
+      then Weeb pos animation action (dead - (realToFrac timeDiff)) alive
       else weeb
 
+updateWeebAliveTimer :: NominalDiffTime -> GameState -> GameState
+updateWeebAliveTimer timeDiff state = state { weebs = fmap (weebTimer) (weebs state) }
+  where
+   weebTimer weeb@(Weeb pos animation action dead alive) = 
+    if action == Normal
+      then Weeb pos animation action dead (alive - (realToFrac timeDiff))
+      else weeb
+
+killWeebs :: GameState -> GameState
+killWeebs state = state { weebs = filter (\(Weeb _ _ _ _ alive) -> alive > 0) (weebs state), lives = (lives state - toKill) }
+  where
+    toKill = length $ filter (\(Weeb _ _ _ _ alive) -> alive < 0) (weebs state)
+
 clearWeebs :: GameState -> GameState
-clearWeebs state = state { weebs = filter (\(Weeb _ _ _ dead) -> dead > 0) (weebs state) } 
+clearWeebs state = state { weebs = filter (\(Weeb _ _ _ dead _) -> dead > 0) (weebs state) } 
+
+changeDifficulty :: GameState -> GameState
+changeDifficulty state = if diffCooldown state <= 0 then state { difficulty = difficulty', diffCooldown = 0.1 } else state
+  where
+    keysPressed = filter (\key -> key == Key'Up || key == Key'Down) $ (pressedKeys . player) state
+
+    difficulty' = 
+        if null keysPressed 
+            then difficulty state 
+            else (keyToCycleFunc $ head keysPressed) (difficulty state)
+
+    keyToCycleFunc Key'Up   = cycleDifficultyUp
+    keyToCycleFunc Key'Down = cycleDifficultyDown
+
+cycleDifficultyUp :: Difficulty -> Difficulty
+cycleDifficultyUp Easy    = Medium
+cycleDifficultyUp Medium  = Hard
+cycleDifficultyUp Hard    = Extreme
+cycleDifficultyUp Extreme = Easy
+
+cycleDifficultyDown :: Difficulty -> Difficulty
+cycleDifficultyDown Easy    = Extreme
+cycleDifficultyDown Medium  = Easy
+cycleDifficultyDown Hard    = Medium
+cycleDifficultyDown Extreme = Hard
 
 spawnWeebs :: NominalDiffTime -> GameState -> IO GameState
 spawnWeebs timeDiff state = do
@@ -218,7 +269,7 @@ spawnWeebs timeDiff state = do
   y <- getStdRandom (randomR (minY,maxY))
   newCoolDown <- getStdRandom (randomR (minWeebCooldown $ difficulty state, maxWeebCooldown $ difficulty state))
 
-  let weebs' = if cooldown' < 0 then (Weeb (fromIntegral x, fromIntegral y) (Normal,[]) Normal deadTimer):(weebs state) else weebs state
+  let weebs' = if cooldown' < 0 then (Weeb (fromIntegral x, fromIntegral y) (Normal,[]) Normal deadTimer aliveTimer):(weebs state) else weebs state
 
   return $ state { weebs = weebs', weebCooldown = if cooldown' < 0 then newCoolDown else cooldown' }
     where
@@ -226,7 +277,6 @@ spawnWeebs timeDiff state = do
       minY = 0
       maxX = gameWidth - (round weebWidth)
       maxY = gameHeight - (round weebHeight)
-
 
 
 exitGame :: GameState -> GameState
